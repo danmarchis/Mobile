@@ -14,12 +14,12 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void enters_username(String keyword) {
-        dictionaryPage.enter_username(keyword);
+    	dictionaryPage.enter_username(keyword);
     }
 
     @Step
     public void enters_password(String keyword) {
-        dictionaryPage.enter_password(keyword);
+    	dictionaryPage.enter_password(keyword);
     }
 
     @Step
@@ -30,7 +30,7 @@ public class EndUserSteps extends ScenarioSteps {
 
     @Step
     public void is_the_home_page() {
-    dictionaryPage.open();
+    	dictionaryPage.open();
 }
 
     @Step
@@ -40,11 +40,6 @@ public class EndUserSteps extends ScenarioSteps {
         starts_login();
         
     }
-    @Step
-    public void Vacation_click(){
-    	dictionaryPage.lookup_Vacation();
-    }
-    
 }
 
   /*@Step
