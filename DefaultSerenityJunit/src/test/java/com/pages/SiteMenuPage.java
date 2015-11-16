@@ -17,4 +17,9 @@ public class SiteMenuPage extends PageObject {
     @FindBy(css="a[href*='menuItem=vacation-report']")
     private WebElementFacade vacationReport;
 	
+    @FindBy(css="a[href*='menuItem=vacation-tracker']")
+    private WebElementFacade vacationTrack;
+    
+    @FindBy(css="a[href*='menuItem=new-request']")
+    private WebElementFacade newRequest;
 }
