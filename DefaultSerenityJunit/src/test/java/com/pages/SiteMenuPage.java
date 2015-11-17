@@ -39,6 +39,10 @@ public class SiteMenuPage extends PageObject {
     	myRequest.click();
     }
     
+    public void accesViewVacation(){
+    	viewVacations.click();
+    }
+    
     @FindBy(css="a[href*='menuItem=my-requests']")
     private WebElementFacade newMyRequests;
     
