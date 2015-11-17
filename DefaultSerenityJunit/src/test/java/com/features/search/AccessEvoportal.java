@@ -22,11 +22,10 @@ public class AccessEvoportal {
 	public LoginSteps endUser;
 
 	@Test
-	public void login_in_vacation_tool_as_a_PM() {
+	public void log_in_vacation_tool_as_a_DM() {
 		endUser.is_the_home_page();
-		endUser.looks_for("emilian.melian1", "Allthe+best25");
-		
-		// endUser.StartLog();
+		endUser.looks_for("ioanahoaghia1", "parola.12");
+	
 
 	}
 }
