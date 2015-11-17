@@ -26,5 +26,25 @@ public class SiteMenuPage extends PageObject {
     
     public void accesTracker(){
     	vacationTrack.click();
-    }  
+    }
+    
+    public void accesNewVacation(){
+    	newRequest.click();
+    
+    }
+    
+    @FindBy(css="a[href*='menuItem=my-requests']")
+    private WebElementFacade newMyRequests;
+    
+    public void create_page_newMyRequests() {
+     newMyRequests.click();
+    }
+    
+    @FindBy(css = "a[href*='menuItem=new-request']")
+    private WebElementFacade newVacationRequest;
+ 
+    public void create_page_newVacationRequest() 
+    {
+     newVacationRequest.click();
+    }
 }

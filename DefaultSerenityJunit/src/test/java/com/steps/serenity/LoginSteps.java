@@ -51,6 +51,8 @@ public class LoginSteps extends ScenarioSteps {
 	
 	@Step
 	public void login_as_tester(){
+
+	
 		enters(ConstantClass.TESTER_NAME,ConstantClass.TESTER_PW);
 		start_login();
 	}
@@ -58,6 +60,11 @@ public class LoginSteps extends ScenarioSteps {
 	@Step
 	public void access_track_tab(){
 		sitePage.accesTracker();
+	}
+	
+	@Step
+	public void access_newVacationRequest_tab(){
+		sitePage.accesNewVacation();
 	}
 	
 }
