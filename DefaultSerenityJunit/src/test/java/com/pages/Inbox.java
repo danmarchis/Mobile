@@ -14,7 +14,7 @@ public class Inbox extends PageObject {
     @FindBy(id="_evovacation_WAR_EvoVacationportlet_multipleRejectButton")
     private WebElementFacade rejectButton;
 
-    @FindBy(id="aui_3_4_0_1_1369")
+    @FindBy(name="_evovacation_WAR_EvoVacationportlet_allRowIds")
     private WebElementFacade tickAll;
 	
     @FindBy(className="aui-paginator-link aui-paginator-next-link")
@@ -28,4 +28,23 @@ public class Inbox extends PageObject {
     
     @FindBy(className="aui-paginator-link aui-paginator-first-link")
     private WebElementFacade firstPage;
+    
+    @FindBy(css="a[href*='menuItem=inbox']")
+    private WebElementFacade inbox;
+
+    public void click_inbox12(){
+		 inbox.click();
+		
+    }
+    
+    public void tick_all(){
+		 tickAll.click();
+		
+   }
+    
+    public void approve_all(){
+		 approveButton.click();
+		
+  }
+
 }
