@@ -12,9 +12,31 @@ import net.thucydides.core.pages.PageObject;
 import java.util.List;
 
 import static ch.lambdaj.Lambda.convert;
+
 @DefaultUrl("http://172.22.4.88:9090/vacation")
-   public class VacationRequestPage  {
+public class VacationRequestPage extends PageObject
+{
+	@FindBy (css = "input[name='startDate']")
+	private WebElementFacade startDate;
+	
+	@FindBy (css = "input[name='endDate']")
+	private WebElementFacade endDate;
+	
 
+	@FindBy (css = "input[id='_evovacation_WAR_EvoVacationportlet_type_CO']")
+	private WebElementFacade holiday;
+	
+	@FindBy (css = "input[id='_evovacation_WAR_EvoVacationportlet_type_CF']")
+	private WebElementFacade vacationwithoutpayment;
+	
+	
+	public void click_startDate() 
+    {
+		element(startDate).waitUntilVisible();
+		startDate.click();
+    }
 
-
+	public void click_endDate() {
+		endDate.click();
+	}
 }
