@@ -1,6 +1,9 @@
 package com.steps.serenity;
 
 import com.pages.LoginPage;
+import com.pages.SiteMenuPage;
+
+import constantPckg.ConstantClass;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -10,6 +13,7 @@ import static org.hamcrest.Matchers.hasItem;
 
 public class LoginSteps extends ScenarioSteps {
 	LoginPage dictionaryPage;
+	SiteMenuPage  sitePage;
 
 	@Step
 	public void enters(String k1, String k2) {
@@ -33,6 +37,27 @@ public class LoginSteps extends ScenarioSteps {
 		enters(term1, term2);
 		start_login();
 	}
-
+	
+	public void login_as_PM(){
+		enters(ConstantClass.PM_NAME,ConstantClass.PM_PW);
+		start_login();
+	}
+	
+	@Step
+	public void login_as_DM(){
+		enters(ConstantClass.DM_NAME,ConstantClass.DM_PW);
+		start_login();
+	}
+	
+	@Step
+	public void login_as_tester(){
+		enters(ConstantClass.TESTER_NAME,ConstantClass.TESTER_PW);
+		start_login();
+	}
+	
+	@Step
+	public void access_track_tab(){
+		sitePage.accesTracker();
+	}
 	
 }

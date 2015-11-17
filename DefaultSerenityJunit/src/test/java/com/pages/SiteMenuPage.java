@@ -1,11 +1,12 @@
 package com.pages;
 
+import constantPckg.ConstantClass;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl("http://172.22.4.88:9090/vacation")
+@DefaultUrl(ConstantClass.BASE_URL)
 public class SiteMenuPage extends PageObject {
 	
 	@FindBy(css="a[href*='menuItem=inbox']")
@@ -23,5 +24,7 @@ public class SiteMenuPage extends PageObject {
     @FindBy(css="a[href*='menuItem=new-request']")
     private WebElementFacade newRequest;
     
-    
+    public void accesTracker(){
+    	vacationTrack.click();
+    }  
 }

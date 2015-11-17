@@ -1,3 +1,4 @@
+
 package com.features.search;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -22,10 +23,11 @@ public class AccessEvoportal {
 	public LoginSteps endUser;
 
 	@Test
-	public void log_in_vacation_tool_as_a_DM() {
+	public void login_in_vacation_tool_as_a_PM() {
 		endUser.is_the_home_page();
-		endUser.looks_for("ioanahoaghia1", "parola.12");
-	
+		//endUser.looks_for("emilian.melian1", "Allthe+best25");
+		endUser.login_as_PM();
+		
 
 	}
 }
