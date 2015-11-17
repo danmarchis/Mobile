@@ -28,4 +28,42 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
 		newVacationRequestPage.click_endDate();
 		datePickerBernadettPage.setDate(day, month, year);
 	}
+	 @Step
+	    public void Holiday() {
+	        newVacationRequestPage.click_holiday();
+	    }
+
+     @Step
+        public void Save(){
+    	 newVacationRequestPage.click_Save();
+     }
+
+     @Step
+         public void VacationWithoutPayment(){
+    	 newVacationRequestPage.click_VacationWithoutPayment();
+    	 
+    	}
+     @Step
+         public void SickLeaveBox(){
+    	 newVacationRequestPage.click_SickLeave();
+     }
+     @Step
+         public void SpecialVacationBox(){
+    	 newVacationRequestPage.click_SpecialVacation();
+     }
+     @Step
+         public void Marriage(){
+    	 newVacationRequestPage.click_SpecialVacation_Marriage();
+     }
+
+     @Step
+         public void CommentClick(){
+    	 newVacationRequestPage.click_Comment();
+     }
+     @Step
+         public void enter_CommentBox(String keyword){
+    	 newVacationRequestPage.enter_Comment(keyword);
+     }
+
+
 }
