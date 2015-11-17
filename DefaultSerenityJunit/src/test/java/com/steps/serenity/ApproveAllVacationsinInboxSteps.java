@@ -26,13 +26,4 @@ public class ApproveAllVacationsinInboxSteps extends ScenarioSteps {
 		inbox1.approve_all();
 	}
      
-	@Steps
-	public LoginSteps endUser;
-	
-	public void login_in_vacation_tool_as_a_DM() {
-		// TODO Auto-generated method stub
-		endUser.is_the_home_page();
-		endUser.looks_for("ioanahoaghia1", "parola.12");
-	
-	}
 }
