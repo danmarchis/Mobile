@@ -24,13 +24,19 @@ public class SiteMenuPage extends PageObject {
     @FindBy(css="a[href*='menuItem=new-request']")
     private WebElementFacade newRequest;
     
+    @FindBy(css="a[href*='menuItem=my-requests']")
+    private WebElementFacade myRequest;
+    
     public void accesTracker(){
     	vacationTrack.click();
     }
     
     public void accesNewVacation(){
     	newRequest.click();
+    }
     
+    public void accesMyRequest(){
+    	myRequest.click();
     }
     
     @FindBy(css="a[href*='menuItem=my-requests']")

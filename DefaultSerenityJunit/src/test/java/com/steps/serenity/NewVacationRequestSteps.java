@@ -10,12 +10,12 @@ import net.thucydides.core.steps.ScenarioSteps;
 public class NewVacationRequestSteps  extends ScenarioSteps {
 	VacationRequestPage newVacationRequestPage;
 	SiteMenuPage vacationOptionsPage;
-	DatePickerPag datePickerBernadettPage;
+	DatePickerPag datePickerPage1;
 
 	@Step
 	public void selectStartDate(int day, String month, int year) {
 		newVacationRequestPage.click_startDate();
-		datePickerBernadettPage.setDate(day, month, year);
+		datePickerPage1.setDate(day, month, year);
 	}
 
 	@Step
@@ -26,6 +26,6 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
 	@Step
 	public void selectEndDate(int day, String month, int year) {
 		newVacationRequestPage.click_endDate();
-		datePickerBernadettPage.setDate(day, month, year);
+		datePickerPage1.setDate(day, month, year);
 	}
 }

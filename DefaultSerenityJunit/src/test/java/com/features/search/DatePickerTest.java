@@ -36,7 +36,7 @@ public class DatePickerTest {
     	newVacationRequestSteps.selectStartDate(17, "Nov", 2015);
     	newVacationRequestSteps.selectEndDate(18, "Nov", 2015);
     	//newVacationRequestSteps.selectHoliday();
-    	//NewVacationRequestPage.selectVacationVithoutPayment();
+    	//NewVacationRequestPage.selectVacationWithoutPayment();
     	
     	
     }
