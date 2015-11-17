@@ -24,9 +24,9 @@ public class AccessEvoportal {
 	@Test
 	public void login_in_vacation_tool_as_a_PM() {
 		endUser.is_the_home_page();
-		endUser.looks_for("emilian.melian1", "Allthe+best25");
+		//endUser.looks_for("emilian.melian1", "Allthe+best25");
+		endUser.login_as_PM();
 		
-		// endUser.StartLog();
 
 	}
 }
