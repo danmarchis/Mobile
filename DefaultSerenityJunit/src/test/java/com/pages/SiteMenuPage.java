@@ -6,7 +6,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl(ConstantClass.BASE_URL)
+//@DefaultUrl(ConstantClass.BASE_URL)
 public class SiteMenuPage extends PageObject {
 	
 	@FindBy(css="a[href*='menuItem=inbox']")
@@ -27,5 +27,14 @@ public class SiteMenuPage extends PageObject {
     public void accesTracker(){
     	vacationTrack.click();
     }
+    
+    @FindBy(css="a[href*='orderByCol=employeName']")
+	private WebElementFacade employeeName;
+	
+
+	
+	public void sortByEmployeeName(){
+		employeeName.click();
+	}
     
 }
