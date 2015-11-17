@@ -1,6 +1,7 @@
 package com.pages;
 
 import ch.lambdaj.function.convert.Converter;
+import constantPckg.ConstantClass;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
@@ -13,8 +14,8 @@ import net.thucydides.core.pages.PageObject;
 import java.util.List;
 
 import static ch.lambdaj.Lambda.convert;
-@DefaultUrl("http://172.22.4.88:9090/vacation")
 
+@DefaultUrl(ConstantClass.BASE_URL)
 public class LoginPage extends PageObject{
 	//WebElement element;
 			@FindBy(id="_58_login")

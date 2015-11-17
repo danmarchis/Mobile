@@ -2,6 +2,8 @@ package com.steps.serenity;
 
 import com.pages.LoginPage;
 import com.pages.SiteMenuPage;
+
+import constantPckg.ConstantClass;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -37,19 +39,19 @@ public class LoginSteps extends ScenarioSteps {
 	}
 	
 	public void login_as_PM(){
-		enters("emilian.melian1","Allthe+best25");
+		enters(ConstantClass.PM_NAME,ConstantClass.PM_PW);
 		start_login();
 	}
 	
 	@Step
 	public void login_as_DM(){
-		enters("ioanahoaghia1","parola.12");
+		enters(ConstantClass.DM_NAME,ConstantClass.DM_PW);
 		start_login();
 	}
 	
 	@Step
 	public void login_as_tester(){
-		enters("danmarchis1","barosanu");
+		enters(ConstantClass.TESTER_NAME,ConstantClass.TESTER_PW);
 		start_login();
 	}
 	

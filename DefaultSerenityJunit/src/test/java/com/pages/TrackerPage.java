@@ -15,5 +15,11 @@ import static ch.lambdaj.Lambda.convert;
 @DefaultUrl("http://172.22.4.88:9090/vacation")
 
 public class TrackerPage {
+	
+	//@FindBy("")
+	private WebElementFacade dropDownBuilding;
+	
+	//@FindBy("")
+	private WebElementFacade dropDownDepartaments;
 
 }
