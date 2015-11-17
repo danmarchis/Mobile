@@ -27,4 +27,10 @@ public class SiteMenuPage extends PageObject {
     	vacationTrack.click();
     }
     
+    public void accesNewVacation(){
+    	newRequest.click();
+    
+    }
+    
+    
 }

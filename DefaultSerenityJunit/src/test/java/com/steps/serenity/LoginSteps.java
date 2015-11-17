@@ -49,13 +49,16 @@ public class LoginSteps extends ScenarioSteps {
 	
 	@Step
 	public void login_as_tester(){
-		enters("danmarchis1","barosanu");
+		enters("dan.marchis1","barosanu");
 		start_login();
 	}
 	
 	@Step
 	public void access_track_tab(){
 		sitePage.accesTracker();
+	}
+	public void access_newVacationRequest_tab(){
+		sitePage.accesNewVacation();
 	}
 	
 }
