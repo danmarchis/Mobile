@@ -54,6 +54,11 @@ public class TrackerPage extends PageObject {
 	@FindBy(css = "#buildings div.mutliSelect ul")
 	 private WebElementFacade buildingContainer;
 	
+	
+	@FindBy(css = "a.aui-paginator-next-link")
+	 private WebElementFacade nextButton;
+	
+	
 	public void sortByEmployeeName() {
 		employeeName.click();
 	}
@@ -131,23 +136,31 @@ public class TrackerPage extends PageObject {
 		}
 	}
 	
-	public void verifyThatTypeIsCorrect(String type) {
+	public void verifyThatTypeIsCorrectInDepartmentColumn(String type) {
 		  List<WebElement> rows = getDriver().findElements(By.cssSelector("table tbody tr td.col-department "));
 		  for (WebElement row : rows) {
-			  /*
-			  if(!row.getText().contains(type)){
-				  System.out.println("The row does not contains the expected type");
-			  }
-			  else {
-				  System.out.println("The row contains the expected type");
-			  }
-			  */
+			 
 		  Assert.assertTrue("The row does not contains the expected type", row.getText().contains(type));
 		   
 		  }
 		 }
 	
+	public int getNumberOfPages() {
+		String number;
+		int pages = 0;
+		List<WebElement> rows = getDriver().findElements(By.cssSelector(".aui-paginator-total"));
+		for (WebElement row : rows) {
+			number = row.getText().toString().split("of ")[1].replace(')', ' ').split(" ")[0];
+			pages = Integer.parseInt(number);
+
+		}
+		return pages;
+	}
 	
+	public void goToNextPage() {
+		nextButton.click();
+			
+		}
 /*
 		public void CheckListIsSorted(String building, String department){
 			List<WebElement> rows = getDriver().findElements(By.cssSelector("table tbody tr td:nth-child(5) "));

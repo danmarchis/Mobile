@@ -50,7 +50,9 @@ public class DropDownElementTest {
     	newTrack.chooseDepartaments("Mobile");
     	//newTrack.checkMobile();
     	newTrack.clickApply();
-		newTrack.showIfTypeIsCorrect("Nobile");
+		//newTrack.showIfTypeIsCorrect("Mobile");
+    	newTrack.verifyThatTypeIsCorrect("Mobile");
+    	//newTrack.showIfDepartamentTypeIsCorrect();
 
 	}
 	
