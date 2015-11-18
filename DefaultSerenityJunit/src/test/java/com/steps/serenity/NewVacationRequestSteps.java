@@ -59,6 +59,12 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
          public void SpecialVacationBox(){
     	 newVacationRequestPage.click_SpecialVacation();
      }
+     
+     @Step
+         public void MaternityLeaveBox(){
+    	 newVacationRequestPage.click_MaternityLeave();
+     }
+     
      @Step
          public void Marriage(){
     	 newVacationRequestPage.click_SpecialVacation_Marriage();
@@ -72,6 +78,39 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
          public void enter_CommentBox(String keyword){
     	 newVacationRequestPage.enter_Comment(keyword);
      }
+
+     @Step
+     public void select_SpecialVacationOption(){
+    	 newVacationRequestPage.click_SpecialVacationBoxOption();
+     }
+   
+
+     @Step
+     public void select_SpecialVacationOptionFuneral(){
+    	 newVacationRequestPage.selectSpecialVacationType();
+     }
+     @Step
+     public void select_SpecialVacationOptionChildBirth(){
+    	 newVacationRequestPage.selectSpecialVacationType_ChildBirth();
+     }
+     @Step
+     public void select_SpecialVacationOptionOther(){
+    	 newVacationRequestPage.selectSpecialVacationType_Other();
+     }
+     @Step
+     public void select_MaternityLeaveOptionConcediu(){
+    	 newVacationRequestPage.selectMaternityLeaveType_Concediu();
+     }
+    @Step
+     public void enter_DurationBox(String keyword){
+    	 newVacationRequestPage.enter_DurationAndDomain(keyword);
+     }
+
+
+    @Step
+    public void enter_InstitutionBox(String keyword){
+    	newVacationRequestPage.enter_InstitutionName(keyword);
+    }
 
 
 }
