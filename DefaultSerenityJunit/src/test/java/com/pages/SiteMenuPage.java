@@ -30,6 +30,12 @@ public class SiteMenuPage extends PageObject {
     
     @FindBy(css = "a[href*='menuItem=new-request']")
     private WebElementFacade newVacationRequest;
+    
+    @FindBy(id="_145_userAvatar")
+    private WebElementFacade userAvatar;
+    
+    @FindBy(css = "a[href*='logout']")
+    private WebElementFacade signOut;
 
     private WebElementFacade myRequest;
 
@@ -51,6 +57,14 @@ public class SiteMenuPage extends PageObject {
 
     public void accesNewVacation(){
     	newRequest.click();
+    }
+    
+    public void accesUserOptions(){
+    	userAvatar.click();
+    }
+    
+    public void signOutOption(){
+    	signOut.click();
     }
     
     public void accesMyRequest(){

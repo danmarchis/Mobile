@@ -73,7 +73,7 @@ public class ViewVacationsPage extends PageObject {
 
     
     public void verifyThatTypeIsCorrect(String message) {
-    	  List<WebElement> rows = getDriver().findElements(By.cssSelector("table tbody tr td:nth-child(4) a"));
+    	  List<WebElement> rows = getDriver().findElements(By.cssSelector("table tbody tr td:nth-child(8) a"));
     	  if(rows.size()==0){throw new IllegalArgumentException("NO registrations!");}
     	  for(WebElement row : rows) {
     	   Assert.assertTrue("The row does not contain the expected type", row.getText().contentEquals(message));
