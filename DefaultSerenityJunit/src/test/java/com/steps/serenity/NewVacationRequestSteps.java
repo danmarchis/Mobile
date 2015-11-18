@@ -112,5 +112,8 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
     	newVacationRequestPage.enter_InstitutionName(keyword);
     }
 
-
+    @Step
+    public void verifyMessage(String message) {
+    		newVacationRequestPage.verify_Message(message);
+    }
 }

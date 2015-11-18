@@ -4,6 +4,9 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
+import static ch.lambdaj.Lambda.convert;
+
+import org.junit.Assert;
 
 @DefaultUrl("http://172.22.4.88:9090/vacation")
 public class VacationRequestPage extends PageObject {
@@ -60,6 +63,10 @@ public class VacationRequestPage extends PageObject {
 	
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_maternityLeave")
 	private WebElementFacade maternityLeaveOptionPrenatal;
+	
+	@FindBy(css = ".portlet-msg-success")
+	private WebElementFacade shownMessage;
+
 
 	public void selectSpecialVacationType() {
 		element(specialVacationOptionChildBirth).waitUntilVisible();
@@ -78,6 +85,10 @@ public class VacationRequestPage extends PageObject {
 	public void selectMaternityLeaveType_Concediu() {
 		element(maternityLeaveOptionPrenatal).waitUntilVisible();
 		maternityLeaveOptionPrenatal.selectByValue("CIC");
+	}
+	
+	public void verify_Message(String message) {
+		Assert.assertTrue("not the expected message", shownMessage.getText().contains(message));
 	}
 	
 	
@@ -145,6 +156,9 @@ public class VacationRequestPage extends PageObject {
     	Institution_Box.type(keyword);
     }
     
-
+  
+    
+    
+    
 
 }
