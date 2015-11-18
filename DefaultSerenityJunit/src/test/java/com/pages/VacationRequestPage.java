@@ -113,6 +113,7 @@ public class VacationRequestPage extends PageObject {
 
 	public void click_Save() {
 		Save.click();
+		waitABit(4000);
 	}
 
 	public void click_VacationWithoutPayment() {
