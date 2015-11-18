@@ -30,6 +30,9 @@ public class Inbox extends PageObject {
     
     @FindBy(css="a[href*='menuItem=inbox']")
     private WebElementFacade inbox;
+    
+    @FindBy(css="ul.nav-tabs li:nth-child(2)")
+    private WebElementFacade assignedToOthers;
 
     public void click_inbox12(){
 		 inbox.click();
@@ -48,6 +51,10 @@ public class Inbox extends PageObject {
 
     public void reject_all(){
 		 rejectButton.click();
+		
+ }
+    public void click_assigntoothers(){
+    	assignedToOthers.click();
 		
  }
 }

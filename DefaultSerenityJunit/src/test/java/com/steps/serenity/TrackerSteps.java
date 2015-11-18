@@ -2,6 +2,7 @@ package com.steps.serenity;
 
 import com.pages.LoginPage;
 import com.pages.SiteMenuPage;
+import com.pages.TrackerPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
@@ -13,12 +14,41 @@ import static org.hamcrest.Matchers.hasItem;
 
 public class TrackerSteps extends ScenarioSteps  {
 	
-	SiteMenuPage tracker;
+	TrackerPage tracker;
+	SiteMenuPage  sitePage;
 	
 	@Step
 	public void access_track_tab(){
-		tracker.accesTracker();
+		sitePage.accesTracker();
 	}
 	
-
+	@Step
+	public void sort_by_employee(){
+		tracker.sortByEmployeeName();
+	}
+	
+	@Step
+	public void clickApply(){
+		tracker.applyButtonClick();
+	}
+	
+	@Step
+	public void showDropDownBuilding(){
+		tracker.clickDropDownBilding();
+	}
+	
+	@Step
+	public void showDropDownAll(){
+		tracker.clickDropDownAll();
+	}
+	
+	@Step
+	public void sort_by_employee1(){
+		tracker.sortByEmployeeName();
+	}
+	
+	@Step
+	public void clickStartDate(){
+		//tracker.clickStartDate();
+	}
 }

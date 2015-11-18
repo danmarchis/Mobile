@@ -2,6 +2,7 @@ package com.steps.serenity;
 
 import com.pages.LoginPage;
 import com.pages.SiteMenuPage;
+import com.pages.TrackerPage;
 
 import constantPckg.ConstantClass;
 import net.thucydides.core.annotations.Step;
@@ -14,6 +15,7 @@ import static org.hamcrest.Matchers.hasItem;
 public class LoginSteps extends ScenarioSteps {
 	LoginPage dictionaryPage;
 	SiteMenuPage  sitePage;
+	TrackerPage  trkPage;
 
 	@Step
 	public void enters(String k1, String k2) {
@@ -63,8 +65,17 @@ public class LoginSteps extends ScenarioSteps {
 	}
 	
 	@Step
+	public void access_drop_build(){
+	//	trkPage.dropDownBuild_clik();
+	}
+	
+	
+
 	public void access_newVacationRequest_tab(){
 		sitePage.accesNewVacation();
 	}
+
+
+
 	
 }

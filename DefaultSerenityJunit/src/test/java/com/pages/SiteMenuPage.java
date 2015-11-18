@@ -6,7 +6,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl(ConstantClass.BASE_URL)
+//@DefaultUrl(ConstantClass.BASE_URL)
 public class SiteMenuPage extends PageObject {
 	
 	@FindBy(css="a[href*='menuItem=inbox']")
@@ -24,27 +24,53 @@ public class SiteMenuPage extends PageObject {
     @FindBy(css="a[href*='menuItem=new-request']")
     private WebElementFacade newRequest;
     
+    @FindBy(css="a[href*='menuItem=my-requests']")
+
+    private WebElementFacade newMyRequests;
+    
+    @FindBy(css = "a[href*='menuItem=new-request']")
+    private WebElementFacade newVacationRequest;
+
+    private WebElementFacade myRequest;
+
+    
     public void accesTracker(){
     	vacationTrack.click();
     }
     
+
+    @FindBy(css="a[href*='orderByCol=employeName']")
+	private WebElementFacade employeeName;
+	
+
+	
+	public void sortByEmployeeName(){
+		employeeName.click();
+	}
+    
+
     public void accesNewVacation(){
     	newRequest.click();
-    
     }
     
-    @FindBy(css="a[href*='menuItem=my-requests']")
-    private WebElementFacade newMyRequests;
+    public void accesMyRequest(){
+    	myRequest.click();
+    }
+    
+    public void accesViewVacation(){
+    	viewVacations.click();
+    }
+    
     
     public void create_page_newMyRequests() {
      newMyRequests.click();
     }
     
-    @FindBy(css = "a[href*='menuItem=new-request']")
-    private WebElementFacade newVacationRequest;
+    
  
     public void create_page_newVacationRequest() 
     {
      newVacationRequest.click();
     }
+
 }
