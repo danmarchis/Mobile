@@ -24,10 +24,17 @@ public class SiteMenuPage extends PageObject {
     @FindBy(css="a[href*='menuItem=new-request']")
     private WebElementFacade newRequest;
     
+    @FindBy(css="a[href*='menuItem=my-requests']")
+    private WebElementFacade newMyRequests;
+    
+    @FindBy(css = "a[href*='menuItem=new-request']")
+    private WebElementFacade newVacationRequest;
+    
     public void accesTracker(){
     	vacationTrack.click();
     }
     
+
     @FindBy(css="a[href*='orderByCol=employeName']")
 	private WebElementFacade employeeName;
 	
@@ -37,4 +44,22 @@ public class SiteMenuPage extends PageObject {
 		employeeName.click();
 	}
     
+
+    public void accesNewVacation(){
+    	newRequest.click();
+    
+    }
+    
+    
+    public void create_page_newMyRequests() {
+     newMyRequests.click();
+    }
+    
+    
+ 
+    public void create_page_newVacationRequest() 
+    {
+     newVacationRequest.click();
+    }
+
 }

@@ -53,6 +53,8 @@ public class LoginSteps extends ScenarioSteps {
 	
 	@Step
 	public void login_as_tester(){
+
+	
 		enters(ConstantClass.TESTER_NAME,ConstantClass.TESTER_PW);
 		start_login();
 	}
@@ -67,15 +69,13 @@ public class LoginSteps extends ScenarioSteps {
 	//	trkPage.dropDownBuild_clik();
 	}
 	
-	@Step
-	public void sort_by_employee(){
-		trkPage.sortByEmployeeName();
-	}
 	
-	@Step
-	public void clickStartDate(){
-		trkPage.clickStartDate();
+
+	public void access_newVacationRequest_tab(){
+		sitePage.accesNewVacation();
 	}
-	
+
+
+
 	
 }

@@ -26,5 +26,29 @@ public class TrackerSteps extends ScenarioSteps  {
 	public void sort_by_employee(){
 		tracker.sortByEmployeeName();
 	}
-
+	
+	@Step
+	public void clickApply(){
+		tracker.applyButtonClick();
+	}
+	
+	@Step
+	public void showDropDownBuilding(){
+		tracker.clickDropDownBilding();
+	}
+	
+	@Step
+	public void showDropDownAll(){
+		tracker.clickDropDownAll();
+	}
+	
+	@Step
+	public void sort_by_employee1(){
+		tracker.sortByEmployeeName();
+	}
+	
+	@Step
+	public void clickStartDate(){
+		//tracker.clickStartDate();
+	}
 }

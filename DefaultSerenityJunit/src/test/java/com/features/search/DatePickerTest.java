@@ -11,14 +11,43 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.steps.serenity.EndUserSteps;
+import com.steps.serenity.LoginSteps;
+import com.steps.serenity.NewVacationRequestSteps;
+
 
 
 import com.steps.serenity.TrackerSteps;
 import com.pages.LoginPage;
 import com.steps.serenity.LoginSteps;
 
+
+
 @RunWith(SerenityRunner.class)
 
 public class DatePickerTest {
+
+
+	@Managed(uniqueSession = true)
+	public WebDriver webdriver;
 	
-}
+	@Steps
+    public LoginSteps logInSteps;
+   
+    @Steps
+    public NewVacationRequestSteps newVacationRequestSteps;
+
+    @Test
+    public void new_simple_request() 
+    {
+    	logInSteps.is_the_home_page();
+    	logInSteps.login_as_tester();
+    	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
+    	newVacationRequestSteps.selectStartDate(17, "Nov", 2015);
+    	newVacationRequestSteps.selectEndDate(18, "Nov", 2015);
+    	//newVacationRequestSteps.selectHoliday();
+    	//NewVacationRequestPage.selectVacationVithoutPayment();
+    	
+    	
+    }
+} 
+
