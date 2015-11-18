@@ -1,5 +1,7 @@
 package com.features.search;
 
+import java.sql.Driver;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
@@ -30,15 +32,15 @@ public class ApproveAllVacationsinInbox {
 	
 	@Steps
 	public SignOutSteps signOutSteps;
-
+	
 	@Test
 	public void approve_all_vacations_inbox() {
 		loginSteps.is_the_home_page();
 		loginSteps.start_login();
-		loginSteps.login_as_tester();
+		loginSteps.login_as_PM();
 		newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(20, "Nov", 2015);
-    	newVacationRequestSteps.selectEndDate(20, "Nov", 2015);
+    	newVacationRequestSteps.selectStartDate(19, "Nov", 2015);
+    	newVacationRequestSteps.selectEndDate(19, "Nov", 2015);
     	newVacationRequestSteps.MaternityLeaveBox();
     	newVacationRequestSteps.select_MaternityLeaveOptionConcediu();
     	newVacationRequestSteps.enter_DurationBox("Mar");
@@ -46,7 +48,7 @@ public class ApproveAllVacationsinInbox {
     	newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
-    	signOutSteps.access_user_options();
+    	//signOutSteps.access_user_options();
     	signOutSteps.sign_out();
     	loginSteps.is_the_home_page();
 		loginSteps.start_login();
