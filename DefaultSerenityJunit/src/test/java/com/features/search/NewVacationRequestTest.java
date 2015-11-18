@@ -23,7 +23,7 @@ import com.steps.serenity.LoginSteps;
 
 @RunWith(SerenityRunner.class)
 
-public class DatePickerTest {
+public class NewVacationRequestTest {
 
 
 	@Managed(uniqueSession = true)
@@ -41,13 +41,11 @@ public class DatePickerTest {
     	logInSteps.is_the_home_page();
     	logInSteps.login_as_tester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(24, "Aug", 2016);
-    	newVacationRequestSteps.selectEndDate(24, "Aug", 2016);
-    	newVacationRequestSteps.MaternityLeaveBox();
-    	newVacationRequestSteps.select_MaternityLeaveOptionConcediu();
-        newVacationRequestSteps.enter_DurationBox("Mar");
-    	newVacationRequestSteps.enter_InstitutionBox("Para");
-    	newVacationRequestSteps.CommentClick();
+    	newVacationRequestSteps.selectStartDate(10, "Oct", 2016);
+    	newVacationRequestSteps.selectEndDate(10, "Oct", 2016);
+    	newVacationRequestSteps.SpecialVacationBox();
+    	newVacationRequestSteps.select_SpecialVacationOptionChildBirth();
+        newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
         newVacationRequestSteps.verifyMessage("Your request completed successfully.");

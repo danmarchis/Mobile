@@ -59,7 +59,7 @@ public class VacationRequestPage extends PageObject {
 	private WebElementFacade MaternityLeaveOption;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_specialReason")
-	private WebElementFacade specialVacationOptionChildBirth;
+	private WebElementFacade specialVacationOption;
 	
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_maternityLeave")
 	private WebElementFacade maternityLeaveOptionPrenatal;
@@ -68,18 +68,18 @@ public class VacationRequestPage extends PageObject {
 	private WebElementFacade shownMessage;
 
 
-	public void selectSpecialVacationType() {
-		element(specialVacationOptionChildBirth).waitUntilVisible();
-		specialVacationOptionChildBirth.selectByValue("FUNERAL");
+	public void selectSpecialVacationType_Funeral() {
+		element(specialVacationOption).waitUntilVisible();
+		specialVacationOption.selectByValue("FUNERAL");
 	}
 
 	public void selectSpecialVacationType_ChildBirth() {
-		element(specialVacationOptionChildBirth).waitUntilVisible();
-		specialVacationOptionChildBirth.selectByValue("CHILD_BIRTH");
+		element(specialVacationOption).waitUntilVisible();
+		specialVacationOption.selectByValue("CHILD_BIRTH");
 	}
 	public void selectSpecialVacationType_Other() {
-		element(specialVacationOptionChildBirth).waitUntilVisible();
-		specialVacationOptionChildBirth.selectByValue("OTHER");
+		element(specialVacationOption).waitUntilVisible();
+		specialVacationOption.selectByValue("OTHER");
 	}
 	
 	public void selectMaternityLeaveType_Concediu() {
@@ -101,9 +101,6 @@ public class VacationRequestPage extends PageObject {
 		endDate.click();
 	}
 
-	
-	
-
 	public void click_holiday() {
 		holiday.click();
 	}
@@ -122,19 +119,14 @@ public class VacationRequestPage extends PageObject {
 		MaternityLeave.click();
 	}
 
+	public void click_VacationWithoutPayment() {
+		vacationwithoutpayment.click();
+	}
 	public void click_Save() {
 		Save.click();
 	}
 
-	public void click_VacationWithoutPayment() {
-		vacationwithoutpayment.click();
-	}
-
-	public void click_SpecialVacation_Marriage() {
-		Marriage.click();
-	}
-
-	public void click_Comment() {
+    public void click_Comment() {
 		Comment.click();
 	}
 
