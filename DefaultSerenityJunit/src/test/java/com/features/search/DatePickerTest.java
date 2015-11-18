@@ -4,6 +4,7 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Issue;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Pending;
+import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 
 import org.junit.Test;
@@ -13,9 +14,7 @@ import org.openqa.selenium.WebDriver;
 import com.steps.serenity.EndUserSteps;
 import com.steps.serenity.LoginSteps;
 import com.steps.serenity.NewVacationRequestSteps;
-
-
-
+import com.steps.serenity.SignOutSteps;
 import com.steps.serenity.TrackerSteps;
 import com.pages.LoginPage;
 import com.steps.serenity.LoginSteps;
@@ -42,8 +41,8 @@ public class DatePickerTest {
     	logInSteps.is_the_home_page();
     	logInSteps.login_as_tester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(19, "Nov", 2015);
-    	newVacationRequestSteps.selectEndDate(20, "Nov", 2015);
+    	newVacationRequestSteps.selectStartDate(24, "Aug", 2016);
+    	newVacationRequestSteps.selectEndDate(24, "Aug", 2016);
     	newVacationRequestSteps.MaternityLeaveBox();
     	newVacationRequestSteps.select_MaternityLeaveOptionConcediu();
         newVacationRequestSteps.enter_DurationBox("Mar");
@@ -51,8 +50,7 @@ public class DatePickerTest {
     	newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
-    
-    	
+        newVacationRequestSteps.verifyMessage("Your request completed successfully.");
     	
     }
 
