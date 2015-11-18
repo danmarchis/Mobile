@@ -31,8 +31,7 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
 	@Step
 	public void selectEndDate(int day, String month, int year) {
 		newVacationRequestPage.click_endDate();
-
-		datePickerDanPage.setDate(day, month, year);
+        datePickerDanPage.setDate(day, month, year);
 	}
 	
 	
@@ -59,12 +58,13 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
          public void SpecialVacationBox(){
     	 newVacationRequestPage.click_SpecialVacation();
      }
+     
      @Step
-         public void Marriage(){
-    	 newVacationRequestPage.click_SpecialVacation_Marriage();
+         public void MaternityLeaveBox(){
+    	 newVacationRequestPage.click_MaternityLeave();
      }
-
-     @Step
+     
+      @Step
          public void CommentClick(){
     	 newVacationRequestPage.click_Comment();
      }
@@ -73,5 +73,37 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
     	 newVacationRequestPage.enter_Comment(keyword);
      }
 
+    
 
+     @Step
+     public void select_SpecialVacationOptionFuneral(){
+    	 newVacationRequestPage.selectSpecialVacationType_Funeral();
+     }
+     @Step
+     public void select_SpecialVacationOptionChildBirth(){
+    	 newVacationRequestPage.selectSpecialVacationType_ChildBirth();
+     }
+     @Step
+     public void select_SpecialVacationOptionOther(){
+    	 newVacationRequestPage.selectSpecialVacationType_Other();
+     }
+     @Step
+     public void select_MaternityLeaveOptionConcediu(){
+    	 newVacationRequestPage.selectMaternityLeaveType_Concediu();
+     }
+    @Step
+     public void enter_DurationBox(String keyword){
+    	 newVacationRequestPage.enter_DurationAndDomain(keyword);
+     }
+
+
+    @Step
+    public void enter_InstitutionBox(String keyword){
+    	newVacationRequestPage.enter_InstitutionName(keyword);
+    }
+
+    @Step
+    public void verifyMessage(String message) {
+    		newVacationRequestPage.verify_Message(message);
+    }
 }
