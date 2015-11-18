@@ -29,9 +29,39 @@ public class VacationRequestPage extends PageObject
 	@FindBy (css = "input[id='_evovacation_WAR_EvoVacationportlet_type_CF']")
 	private WebElementFacade vacationwithoutpayment;
 	
+	@FindBy(id="_evovacation_WAR_EvoVacationportlet_type_CM")
+	private WebElementFacade SickLeave;
 	
-	public void click_startDate() 
-    {
+	@FindBy(id="_evovacation_WAR_EvoVacationportlet_type_CS")
+	private WebElementFacade SpecialVacation;
+	
+	@FindBy(id="_evovacation_WAR_EvoVacationportlet_type_ML")
+	private WebElementFacade MaternityLeave;
+	
+	@FindBy(id="_evovacation_WAR_EvoVacationportlet_newVacationComment")
+	private WebElementFacade Comment;
+	
+	@FindBy(id="_evovacation_WAR_EvoVacationportlet_commentContent")
+	private WebElementFacade Comment_Box;
+	
+	@FindBy(name="duration")
+	private WebElementFacade Duration_Box;
+	
+	@FindBy(id="institution")
+	private WebElementFacade Institution_Box;
+	
+	@FindBy(id="_evovacation_WAR_EvoVacationportlet_saveButton")
+	private WebElementFacade Save;
+	
+	@FindBy(id="_evovacation_WAR_EvoVacationportlet_cancelButton")
+	private WebElementFacade Cancel;
+	
+	@FindBy(id="_evovacation_WAR_EvoVacationportlet_specialReason=MARRIAGE")
+	private WebElementFacade Marriage;
+	
+	
+	
+	public void click_startDate() {
 		element(startDate).waitUntilVisible();
 		startDate.click();
     }
@@ -39,20 +69,40 @@ public class VacationRequestPage extends PageObject
 	public void click_endDate() {
 		endDate.click();
 	}
+
 	
-	@FindBy (id="_evovacation_WAR_EvoVacationportlet_trackerEndDate")
-	private WebElementFacade endDate1;
 	
-	@FindBy(id="_evovacation_WAR_EvoVacationportlet_trackerStartDate")
-  	private WebElementFacade startDate1;
-	
-	public void click_startDate1() 
-    {
-		element(startDate1).waitUntilVisible();
-		startDate1.click();
+
+    public void click_holiday(){
+    	holiday.click();
+    }
+    public void click_SickLeave(){
+    	SickLeave.click();
+    }
+    public void click_SpecialVacation(){
+    	SpecialVacation.click();
+    }
+    public void click_MaternityLeave(){
+    	MaternityLeave.click();
+    }
+    public void click_Save(){
+    	Save.click();
+    }
+    public void click_VacationWithoutPayment(){
+    	vacationwithoutpayment.click();
+    }
+    
+    public void click_SpecialVacation_Marriage(){
+    	Marriage.click();
     }
 
-	public void click_endDate1() {
-		endDate1.click();
-	}
+    public void click_Comment(){
+    	Comment.click();
+    }
+    public void enter_Comment(String keyword) {
+        Comment_Box.type(keyword);
+    }
+    
+    
+
 }

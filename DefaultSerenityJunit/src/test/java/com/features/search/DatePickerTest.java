@@ -43,9 +43,13 @@ public class DatePickerTest {
     	logInSteps.login_as_tester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(17, "Nov", 2015);
-    	newVacationRequestSteps.selectEndDate(18, "Nov", 2015);
+    	newVacationRequestSteps.selectEndDate(20, "Nov", 2015);
+    	newVacationRequestSteps.SpecialVacationBox();
+    	newVacationRequestSteps.CommentClick();
+    	newVacationRequestSteps.enter_CommentBox("Mama are mere");
+    	newVacationRequestSteps.Save();
     	//newVacationRequestSteps.selectHoliday();
-    	//NewVacationRequestPage.selectVacationVithoutPayment();
+    	//NewVacationRequestPage.selectVacationWithoutPayment();
     	
     	
     }

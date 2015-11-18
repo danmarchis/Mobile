@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import com.steps.serenity.ApproveAllVacationsAssignedToOthersInbox;
 import com.steps.serenity.ApproveAllVacationsinInboxSteps;
 import com.steps.serenity.LoginSteps;
 
@@ -12,13 +13,13 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
-public class ApproveAllVacationsinInbox {
+public class ApproveAssignedToOthers_test {
 	
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 	
 	@Steps
-	public ApproveAllVacationsinInboxSteps approveAllVacationsinInboxSteps;
+	public ApproveAllVacationsAssignedToOthersInbox approveAllAssignedToOthers;
 	
 	@Steps
 	public LoginSteps loginSteps;
@@ -28,9 +29,9 @@ public class ApproveAllVacationsinInbox {
 		loginSteps.is_the_home_page();
 		loginSteps.start_login();
 		loginSteps.login_as_DM();
-		approveAllVacationsinInboxSteps.click_inbox_page();
-		approveAllVacationsinInboxSteps.tick_all_vacations();
-		approveAllVacationsinInboxSteps.approve_all_vacations();
-		
-}
+		approveAllAssignedToOthers.click_inbox_page();
+		approveAllAssignedToOthers.click_assign_to_others();
+		approveAllAssignedToOthers.tick_all_vacations();
+		approveAllAssignedToOthers.approve_all_vacations();	
+	}
 }

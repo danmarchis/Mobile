@@ -6,19 +6,20 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.serenity.ApproveAllVacationsinInboxSteps;
 import com.steps.serenity.LoginSteps;
+import com.steps.serenity.RejectAllVacationsInInboxSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
-public class ApproveAllVacationsinInbox {
+public class RejectAllVacationsinInbox {
 	
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 	
 	@Steps
-	public ApproveAllVacationsinInboxSteps approveAllVacationsinInboxSteps;
+	public RejectAllVacationsInInboxSteps rejectAllVacationsinInbox;
 	
 	@Steps
 	public LoginSteps loginSteps;
@@ -28,9 +29,9 @@ public class ApproveAllVacationsinInbox {
 		loginSteps.is_the_home_page();
 		loginSteps.start_login();
 		loginSteps.login_as_DM();
-		approveAllVacationsinInboxSteps.click_inbox_page();
-		approveAllVacationsinInboxSteps.tick_all_vacations();
-		approveAllVacationsinInboxSteps.approve_all_vacations();
+		rejectAllVacationsinInbox.click_inbox_page();
+		rejectAllVacationsinInbox.tick_all_vacations();
+		rejectAllVacationsinInbox.approve_all_vacations();
 		
 }
 }
