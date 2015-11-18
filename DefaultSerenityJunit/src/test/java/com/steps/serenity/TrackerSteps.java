@@ -37,11 +37,23 @@ public class TrackerSteps extends ScenarioSteps  {
 		tracker.clickDropDownBilding();
 	}
 	
+	
+	
+	
+	@Step
+	public void showDropDownDepartaments(){
+		tracker.clickDropDownDepartaments();
+	}
+	
 	@Step
 	public void showDropDownAll(){
 		tracker.clickDropDownAll();
 	}
 	
+	@Step
+	public void showDepartamentsDropDownAll(){
+		tracker.clickDepartamentsDropDownAll();
+	}
 	@Step
 	public void sort_by_employee1(){
 		tracker.sortByEmployeeName();
@@ -50,5 +62,22 @@ public class TrackerSteps extends ScenarioSteps  {
 	@Step
 	public void clickStartDate(){
 		//tracker.clickStartDate();
+	}
+
+	public void checkMobile() {
+		tracker.checkMobileDepartament();
+		
+	}
+	
+	public void chooseDepartaments(String depName){
+		tracker.setDepartment(depName);
+	}
+	
+	public void chooseBuildings(String buildName){
+		tracker.setBuilding(buildName);
+	}
+	
+	public void showIfTypeIsCorrect(String type){
+		tracker.verifyThatTypeIsCorrect(type);
 	}
 }
