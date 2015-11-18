@@ -31,8 +31,7 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
 	@Step
 	public void selectEndDate(int day, String month, int year) {
 		newVacationRequestPage.click_endDate();
-
-		datePickerDanPage.setDate(day, month, year);
+        datePickerDanPage.setDate(day, month, year);
 	}
 	
 	
@@ -65,12 +64,7 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
     	 newVacationRequestPage.click_MaternityLeave();
      }
      
-     @Step
-         public void Marriage(){
-    	 newVacationRequestPage.click_SpecialVacation_Marriage();
-     }
-
-     @Step
+      @Step
          public void CommentClick(){
     	 newVacationRequestPage.click_Comment();
      }
@@ -79,15 +73,11 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
     	 newVacationRequestPage.enter_Comment(keyword);
      }
 
-     @Step
-     public void select_SpecialVacationOption(){
-    	 newVacationRequestPage.click_SpecialVacationBoxOption();
-     }
-   
+    
 
      @Step
      public void select_SpecialVacationOptionFuneral(){
-    	 newVacationRequestPage.selectSpecialVacationType();
+    	 newVacationRequestPage.selectSpecialVacationType_Funeral();
      }
      @Step
      public void select_SpecialVacationOptionChildBirth(){
