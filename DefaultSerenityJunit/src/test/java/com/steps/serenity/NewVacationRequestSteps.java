@@ -10,13 +10,18 @@ import net.thucydides.core.steps.ScenarioSteps;
 public class NewVacationRequestSteps  extends ScenarioSteps {
 	VacationRequestPage newVacationRequestPage;
 	SiteMenuPage vacationOptionsPage;
-	DatePickerPag datePickerPage1;
+
+	DatePickerPag datePickerDanPage;
+
 
 	@Step
 	public void selectStartDate(int day, String month, int year) {
 		newVacationRequestPage.click_startDate();
-		datePickerPage1.setDate(day, month, year);
+
+		datePickerDanPage.setDate(day, month, year);
 	}
+	
+	
 
 	@Step
 	public void click_NewVacationRequestFromTheLeftMenu() {
@@ -26,8 +31,11 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
 	@Step
 	public void selectEndDate(int day, String month, int year) {
 		newVacationRequestPage.click_endDate();
-		datePickerPage1.setDate(day, month, year);
+
+		datePickerDanPage.setDate(day, month, year);
 	}
+	
+	
 	 @Step
 	    public void Holiday() {
 	        newVacationRequestPage.click_holiday();
