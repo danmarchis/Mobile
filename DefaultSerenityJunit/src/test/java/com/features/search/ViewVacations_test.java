@@ -32,5 +32,6 @@ public class ViewVacations_test {
 		viewFilteredVacations.tick_holiday_type();
 		viewFilteredVacations.tick_pending_status();
 		viewFilteredVacations.click_apply_button();	
+		viewFilteredVacations.check_registration_content("Holiday");
 	}
 }

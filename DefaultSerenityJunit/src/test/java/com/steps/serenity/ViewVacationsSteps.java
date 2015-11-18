@@ -29,5 +29,10 @@ public void click_apply_button() {
 viewVacations.clickApply();
 }
 
+@Step
+public void check_registration_content(String mesage) {
+viewVacations.verifyThatTypeIsCorrect(mesage);
+}
+
 
 }
