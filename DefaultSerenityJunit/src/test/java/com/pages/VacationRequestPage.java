@@ -97,7 +97,7 @@ public class VacationRequestPage extends PageObject {
 		holiday.click();
 	}
 
-<<<<<<< HEAD
+
 	public void click_SickLeave() {
 		SickLeave.click();
 	}
