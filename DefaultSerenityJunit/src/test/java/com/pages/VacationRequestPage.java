@@ -37,7 +37,7 @@ public class VacationRequestPage extends PageObject {
 	@FindBy(name = "duration")
 	private WebElementFacade Duration_Box;
 
-	@FindBy(id = "institution")
+	@FindBy(name = "institution")
 	private WebElementFacade Institution_Box;
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_saveButton")
@@ -136,9 +136,13 @@ public class VacationRequestPage extends PageObject {
 	}
 
 	
+    public void enter_DurationAndDomain(String keyword){
+    	Duration_Box.type(keyword);
+    }
 
-
- 
+    public void enter_InstitutionName(String keyword){
+    	Institution_Box.type(keyword);
+    }
     
 
 

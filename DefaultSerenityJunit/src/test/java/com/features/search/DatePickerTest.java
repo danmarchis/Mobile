@@ -44,8 +44,10 @@ public class DatePickerTest {
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(19, "Nov", 2015);
     	newVacationRequestSteps.selectEndDate(20, "Nov", 2015);
-    	newVacationRequestSteps.SpecialVacationBox();
-    	newVacationRequestSteps.select_SpecialVacationOptionChildBirth();
+    	newVacationRequestSteps.MaternityLeaveBox();
+    	newVacationRequestSteps.select_MaternityLeaveOptionConcediu();
+    	newVacationRequestSteps.enter_DurationBox("Mar");
+    	newVacationRequestSteps.enter_InstitutionBox("Para");
     	newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
