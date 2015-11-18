@@ -65,5 +65,28 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
     	 newVacationRequestPage.enter_Comment(keyword);
      }
 
+     @Step
+     public void select_SpecialVacationOption(){
+    	 newVacationRequestPage.click_SpecialVacationBoxOption();
+     }
+   
 
+     @Step
+     public void select_SpecialVacationOptionFuneral(){
+    	 newVacationRequestPage.selectSpecialVacationType();
+     }
+     @Step
+     public void select_SpecialVacationOptionChildBirth(){
+    	 newVacationRequestPage.selectSpecialVacationType_ChildBirth();
+     }
+     @Step
+     public void select_SpecialVacationOptionOther(){
+    	 newVacationRequestPage.selectSpecialVacationType_Other();
+     }
+     @Step
+     public void select_MaternityLeaveOptionConcediu(){
+    	 newVacationRequestPage.selectMaternityLeaveType_Concediu();
+     }
+    
+     
 }
