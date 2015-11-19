@@ -38,8 +38,8 @@ public class SelectDataTest {
 		endUser.login_as_PM();
 		endUser.access_track_tab();
 		newDateSteps.selectStartDate_track(17, "Nov", 2015);
-    	
-		newDateSteps.selectEndDate_track(26, "Nov", 2015);
+		
+		newDateSteps.selectEndDate_track(31, "Dec", 2015);
     	newTrack.showDropDownBuilding();
     	newTrack.showDropDownAll();
     
@@ -52,7 +52,7 @@ public class SelectDataTest {
     	newTrack.chooseDepartaments("Mobile");
     	//newTrack.checkMobile();
     	newTrack.clickApply();
-    	newTrack.showEmployeeVacationsList();
+    	newTrack.showEmployeeVacationsList("Mobile");
 		//newTrack.showIfTypeIsCorrect("Mobile");
     	//newTrack.verifyThatTypeIsCorrect("Mobile");
     	//newTrack.showIfDepartamentTypeIsCorrect();

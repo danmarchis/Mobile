@@ -14,6 +14,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -72,15 +73,18 @@ public class TrackerSteps extends ScenarioSteps {
 		tracker.checkMobileDepartament();
 
 	}
-
+	
+	@Step
 	public void chooseDepartaments(String depName) {
 		tracker.setDepartment(depName);
 	}
 
+	@Step
 	public void chooseBuildings(String buildName) {
 		tracker.setBuilding(buildName);
 	}
 
+	@Step
 	public void showIfTypeIsCorrect(String type) {
 		tracker.verifyThatTypeIsCorrectInDepartmentColumn(type);
 	}
@@ -93,24 +97,40 @@ public class TrackerSteps extends ScenarioSteps {
 	
 	@Step
 	public List<EmployeeVacationModel> grabVacationsList(){
-		return tracker.grabEmployeeVacationsList();
+		List<EmployeeVacationModel> finalResultList = new ArrayList<EmployeeVacationModel>(); 
+		do{
+			List<EmployeeVacationModel> partialList = tracker.grabEmployeeVacationsList();
+			finalResultList.addAll(partialList);
+		}while(tracker.isNextPresent());
+		
+		return finalResultList;
 	}
 	
 	
 	
-	
 	@Step
-	public void showEmployeeVacationsList(){
-		List<EmployeeVacationModel> result = grabVacationsList();
-		tracker.verifyDeparment(result) ;
+	public void showEmployeeVacationsList(String type){
+	
+		List<EmployeeVacationModel> result = grabVacationsList();	
+		tracker.verifyDeparment(result,type) ;
+		
+	//	nextPageTrack();
 	}
 	/*
 	 * public void showIfDepartamentTypeIsCorrect(){
 	 * tracker.verifyIfDepartamentSelectedIsTrue(); }
 	 */
 
+	
+
 	public void verifyIfCanChooseAnEndDateThatIsEarlierThanTheStartDate() {
 		// preluate start date and end date
 		//
+	}
+
+	public void selectNumberOfRowsInPage() {
+		// TODO Auto-generated method stub
+		tracker.clickOnDropDown();
+		
 	}
 }

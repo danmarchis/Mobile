@@ -27,6 +27,10 @@ public class TrackerPage extends PageObject {
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_trackerStartDate")
 	private WebElementFacade startDate;
+	
+	//Page list container
+	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_vacationTrackerTable")
+	private WebElement vacationContainer;
 
 	// end
 
@@ -62,6 +66,9 @@ public class TrackerPage extends PageObject {
 	@FindBy(css = "div.results-grid")
 	private WebElementFacade resultListContainer;
 
+	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_evozonVacationsSearchContainerPageIteratorBottom_itemsPerPage")
+	private WebElementFacade dropDownButton;
+	
 	public void sortByEmployeeName() {
 		employeeName.click();
 	}
@@ -186,7 +193,8 @@ public class TrackerPage extends PageObject {
 	public void ifTypeisCorrect(String terms){
 		for (int i = 0; i < 2; i++) {
 			System.out.println("Ruleaza");
-			verifyThatTypeIsCorrectInDepartmentColumn(terms);
+		//	List<EmployeeVacationModel> result = grabVacationsList();
+		//	verifyThatTypeIsCorrectInDepartmentColumn(terms);
 			goToNextPage();
 			waitABit(2000);
 			System.out.println(i);
@@ -230,10 +238,45 @@ public class TrackerPage extends PageObject {
 		return resultList;
 	}
 	
-	public void verifyDeparment(List<EmployeeVacationModel> ListElements){
+	public void verifyDeparment(List<EmployeeVacationModel> ListElements,String type){
+		
 		for (EmployeeVacationModel department : ListElements) {
-				Assert.assertTrue("The row does not contains the expected type", department.getDepartment().contains("Mobile"));
+				Assert.assertTrue("The row does not contains the expected type", department.getDepartment().contains(type));
 			}
 		}
+
+	public void nextPage() {
+		while(nextButton.isCurrentlyVisible()){
+			nextButton.click();
+		}
+		//
+		
 	}
 
+	public void clickOnDropDown() {
+		
+		
+	}
+	
+	public void verifyDepartment(String department){
+		List<WebElement> departmentList = getDriver().findElements(By.cssSelector(""));
+		
+		
+	}
+
+	public boolean isNextPresent() {
+		boolean result = false;
+		element(vacationContainer).waitUntilVisible();
+		List<WebElement> nextButtonList = vacationContainer.findElements(By.cssSelector(".aui-paginator-next-link"));
+		if(nextButtonList.size() > 0){
+			if(nextButtonList.get(0).getTagName().contentEquals("a")){
+				nextButtonList.get(0).click();
+				result = true;
+			}
+		}
+		return result;
+	}
+
+	
+	}
+	
