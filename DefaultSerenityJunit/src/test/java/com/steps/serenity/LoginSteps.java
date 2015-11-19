@@ -70,6 +70,11 @@ public class LoginSteps extends ScenarioSteps {
 	}
 	
 	
+	@Step
+	public void navigateTo(String URL){
+		getDriver().get(URL);
+	}
+	
 
 	public void access_newVacationRequest_tab(){
 		sitePage.accesNewVacation();
