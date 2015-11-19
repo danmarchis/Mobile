@@ -59,4 +59,9 @@ public class MyRequestPage extends PageObject{
 	 public void Pending(){
 		 pendingCheckBox.click();
 	 }
+     public void ApplyButton(){
+    	 applyButton.click();
+     }
+
+
 }
