@@ -169,11 +169,12 @@ public class NewVacationRequestTest {
     @Test
     public void MaternityLeave_Concediu_Ingrijire_Copii_request()
     {
-   
+    	
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(10, "Oct", 2016);
     	newVacationRequestSteps.selectEndDate(10, "Oct", 2016);
     	newVacationRequestSteps.MaternityLeaveBox();
+    	newVacationRequestSteps.select_MaternityLeaveOptionConcediu();
     	newVacationRequestSteps.enter_DurationBox("para");
     	newVacationRequestSteps.enter_InstitutionBox("mar");
         newVacationRequestSteps.CommentClick();
