@@ -52,7 +52,7 @@ public class SelectDataTest {
     	newTrack.chooseDepartaments("Mobile");
     	//newTrack.checkMobile();
     	newTrack.clickApply();
-    	newTrack.showEmployeeVacationsList("Mobile");
+    	newTrack.showEmployeeVacationsList("Nobile");
 		//newTrack.showIfTypeIsCorrect("Mobile");
     	//newTrack.verifyThatTypeIsCorrect("Mobile");
     	//newTrack.showIfDepartamentTypeIsCorrect();
