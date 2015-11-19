@@ -83,6 +83,10 @@ public class SiteMenuPage extends PageObject {
 	public void create_page_newVacationRequest() {
 		newVacationRequest.click();
 	}
+	
+	public void exportMenu() {
+		vacationReport.click();
+	}
 
 
    
