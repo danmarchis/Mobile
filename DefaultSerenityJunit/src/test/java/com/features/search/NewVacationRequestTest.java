@@ -18,6 +18,7 @@ import com.steps.serenity.SignOutSteps;
 import com.steps.serenity.TrackerSteps;
 import com.pages.LoginPage;
 import com.steps.serenity.LoginSteps;
+import com.steps.serenity.MyRequestSteps;
 
 
 
@@ -31,6 +32,9 @@ public class NewVacationRequestTest {
 	
 	@Steps
     public LoginSteps logInSteps;
+	
+	@Steps
+	public MyRequestSteps myrequest;
    
     @Steps
     public NewVacationRequestSteps newVacationRequestSteps;
@@ -41,18 +45,21 @@ public class NewVacationRequestTest {
     	logInSteps.is_the_home_page();
     	logInSteps.login_as_tester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(10, "Oct", 2016);
-    	newVacationRequestSteps.selectEndDate(10, "Oct", 2016);
+    	newVacationRequestSteps.selectStartDate(5, "Jan", 2018);
+    	newVacationRequestSteps.selectEndDate(6, "Jan", 2018);
     	newVacationRequestSteps.Holiday();
     	newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
         newVacationRequestSteps.verifyMessage("Your request completed successfully.");
-    	
+        myrequest.click_MyRequestFromLeftMenu();
+        myrequest.click_Holiday();
+        myrequest.click_OneToFiveDays();
+        myrequest.click_Pending();
     }
 
    
-    @Test
+   /* @Test
     public void Vacation_without_payment_request() 
     {
    
@@ -185,7 +192,7 @@ public class NewVacationRequestTest {
     }
 
     
-    
+    */
 
 } 
 

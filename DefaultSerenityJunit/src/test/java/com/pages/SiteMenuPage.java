@@ -29,8 +29,7 @@ public class SiteMenuPage extends PageObject {
 	private WebElementFacade newRequest;
 
 	@FindBy(css = "a[href*='menuItem=my-requests']")
-
-	private WebElementFacade newMyRequests;
+    private WebElementFacade newMyRequests;
 
 	@FindBy(css = "a[href*='menuItem=new-request']")
 	private WebElementFacade newVacationRequest;
@@ -84,5 +83,10 @@ public class SiteMenuPage extends PageObject {
 	public void create_page_newVacationRequest() {
 		newVacationRequest.click();
 	}
+
+
+   
+
+
 
 }
