@@ -8,6 +8,7 @@ import net.serenitybdd.core.annotations.findby.By;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.steps.ScenarioSteps;
+import tools.EmployeeVacationModel;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -17,91 +18,99 @@ import java.util.List;
 
 import org.openqa.selenium.WebElement;
 
-public class TrackerSteps extends ScenarioSteps  {
-	
+public class TrackerSteps extends ScenarioSteps {
+
 	TrackerPage tracker;
-	SiteMenuPage  sitePage;
-	
+	SiteMenuPage sitePage;
+
 	@Step
-	public void access_track_tab(){
+	public void access_track_tab() {
 		sitePage.accesTracker();
 	}
-	
+
 	@Step
-	public void sort_by_employee(){
+	public void sort_by_employee() {
 		tracker.sortByEmployeeName();
 	}
-	
+
 	@Step
-	public void clickApply(){
+	public void clickApply() {
 		tracker.applyButtonClick();
 	}
-	
+
 	@Step
-	public void showDropDownBuilding(){
+	public void showDropDownBuilding() {
 		tracker.clickDropDownBilding();
 	}
-	
-	
-	
-	
+
 	@Step
-	public void showDropDownDepartaments(){
+	public void showDropDownDepartaments() {
 		tracker.clickDropDownDepartaments();
 	}
-	
+
 	@Step
-	public void showDropDownAll(){
+	public void showDropDownAll() {
 		tracker.clickDropDownAll();
 	}
-	
+
 	@Step
-	public void showDepartamentsDropDownAll(){
+	public void showDepartamentsDropDownAll() {
 		tracker.clickDepartamentsDropDownAll();
 	}
+
 	@Step
-	public void sort_by_employee1(){
+	public void sort_by_employee1() {
 		tracker.sortByEmployeeName();
 	}
-	
+
 	@Step
-	public void clickStartDate(){
-		//tracker.clickStartDate();
+	public void clickStartDate() {
+		// tracker.clickStartDate();
 	}
 
 	public void checkMobile() {
 		tracker.checkMobileDepartament();
-		
+
 	}
-	
-	public void chooseDepartaments(String depName){
+
+	public void chooseDepartaments(String depName) {
 		tracker.setDepartment(depName);
 	}
-	
-	public void chooseBuildings(String buildName){
+
+	public void chooseBuildings(String buildName) {
 		tracker.setBuilding(buildName);
 	}
-	
-	
-	public void showIfTypeIsCorrect(String type){
+
+	public void showIfTypeIsCorrect(String type) {
 		tracker.verifyThatTypeIsCorrectInDepartmentColumn(type);
+	}
+
+	@Step
+	public void verifyThatTypeIsCorrect(String terms) {
+
+		tracker.ifTypeisCorrect(terms);
 	}
 	
 	@Step
-	public void verifyThatTypeIsCorrect(String terms) {
-		// myRequestPage.verifyThatTypeIsCorrect(type);
-		for (int i = 0; i < tracker.getNumberOfPages(); i++) {
-			tracker.verifyThatTypeIsCorrectInDepartmentColumn(terms);
-			tracker.goToNextPage();
-			// myRequestPage.verifyThatTypeIsCorrect(type);
-		}
+	public List<EmployeeVacationModel> grabVacationsList(){
+		return tracker.grabEmployeeVacationsList();
+	}
+	
+	
+	
+	
+	@Step
+	public void showEmployeeVacationsList(){
+		List<EmployeeVacationModel> result = grabVacationsList();
+		tracker.verifyDeparment(result) ;
 	}
 	/*
-	public void showIfDepartamentTypeIsCorrect(){
-		tracker.verifyIfDepartamentSelectedIsTrue();
-	}
-	*/
+	 * public void showIfDepartamentTypeIsCorrect(){
+	 * tracker.verifyIfDepartamentSelectedIsTrue(); }
+	 */
 
-	
-	
+	public void verifyIfCanChooseAnEndDateThatIsEarlierThanTheStartDate() {
+		// preluate start date and end date
+		//
+	}
 }
