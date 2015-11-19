@@ -1,4 +1,7 @@
 package com.steps.serenity;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.pages.DatePickerPag;
 import com.pages.MyRequestPage;
 import com.pages.SiteMenuPage;
@@ -6,6 +9,7 @@ import com.pages.VacationRequestPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import tools.EmployeeVacationModel;
 
 public class MyRequestSteps extends ScenarioSteps {
 
@@ -53,5 +57,16 @@ public class MyRequestSteps extends ScenarioSteps {
     public void click_StartDate(){
 	  Request.StartDate();
   }
+
+
+ 
+
+
+
+
+
+
+
+
 
 }
