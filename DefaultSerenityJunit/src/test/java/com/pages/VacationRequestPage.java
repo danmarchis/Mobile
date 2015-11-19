@@ -101,6 +101,7 @@ public class VacationRequestPage extends PageObject {
 		endDate.click();
 	}
 
+
 	public void click_holiday() {
 		holiday.click();
 	}
@@ -114,6 +115,7 @@ public class VacationRequestPage extends PageObject {
 		SpecialVacation.click();
 	}
 	
+
 
 	public void click_MaternityLeave() {
 		MaternityLeave.click();
