@@ -38,7 +38,9 @@ public class MyRequestSteps extends ScenarioSteps {
   public void click_Pending(){
 	  Request.Pending();
   }
-
+   public void click_Apply(){
+	   Request.ApplyButton();
+   }
 
 
 
