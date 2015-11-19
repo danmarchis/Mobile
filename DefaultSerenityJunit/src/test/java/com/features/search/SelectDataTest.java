@@ -13,11 +13,12 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.serenity.TrackerSteps;
 import com.pages.LoginPage;
+import com.steps.serenity.DatePickerActionsSteps;
 import com.steps.serenity.LoginSteps;
 import com.steps.serenity.NewVacationRequestSteps;
 
 @RunWith(SerenityRunner.class)
-public class DropDownElementTest {
+public class SelectDataTest {
 
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
@@ -26,18 +27,19 @@ public class DropDownElementTest {
 	public LoginSteps endUser;
 	
 	@Steps
-	public NewVacationRequestSteps newVacationRequestSteps;
+	public DatePickerActionsSteps newDateSteps;
 	
 	@Steps
 	public TrackerSteps newTrack;
 
 	@Test
-	public void verify_if_the_drop_down_elements_are_visible() {
+	public void verify_if_the_application_allowed_to_select_an_erlier_endDate_than_the_startDate() {
 		endUser.is_the_home_page();
 		endUser.login_as_PM();
 		endUser.access_track_tab();
-		//newTrack.selectStartDate_track(17, "Nov", 2015);
-    	//newVacationRequestSteps.selectEndDate_track(26, "Nov", 2015);
+		newDateSteps.selectStartDate_track(17, "Nov", 2015);
+		
+		newDateSteps.selectEndDate_track(31, "Dec", 2015);
     	newTrack.showDropDownBuilding();
     	newTrack.showDropDownAll();
     
@@ -50,10 +52,11 @@ public class DropDownElementTest {
     	newTrack.chooseDepartaments("Mobile");
     	//newTrack.checkMobile();
     	newTrack.clickApply();
+    	newTrack.showEmployeeVacationsList("Nobile");
 		//newTrack.showIfTypeIsCorrect("Mobile");
     	//newTrack.verifyThatTypeIsCorrect("Mobile");
-    	//newTrack.showEmployeeVacationsList();
     	//newTrack.showIfDepartamentTypeIsCorrect();
+    	//newTrack.verifyIfCanChooseAndEndDateThatIsEarlierThanTheStartDate();
 
 	}
 	

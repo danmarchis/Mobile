@@ -1,10 +1,17 @@
 package com.pages;
 
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+
 import constantPckg.ConstantClass;
+import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
+
+
 
 @DefaultUrl(ConstantClass.BASE_URL)
 public class MyRequestPage extends PageObject{
@@ -32,6 +39,16 @@ public class MyRequestPage extends PageObject{
 
 	 @FindBy(id="_evovacation_WAR_EvoVacationportlet_FIFTHCheckbox")
 	    private WebElementFacade OneToFiveDaysButton;
+	 
+	 @FindBy(css=".lfr-search-container table tbody tr th:nth-child(1)")
+	    private WebElementFacade StartDate;
+	 
+	 
+	 @FindBy(css = "div[class='lfr-search-container '] tbody tr[class^='portlet-section-body results-row']")
+	    private List<WebElement> tableRows;
+	 
+	 
+	 
 
 	 
 	 public void Holiday(){
@@ -62,6 +79,8 @@ public class MyRequestPage extends PageObject{
      public void ApplyButton(){
     	 applyButton.click();
      }
-
+     public void StartDate(){
+		 StartDate.click();
+	 }
 
 }
