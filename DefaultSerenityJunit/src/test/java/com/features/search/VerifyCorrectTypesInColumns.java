@@ -18,7 +18,7 @@ import com.steps.serenity.LoginSteps;
 import com.steps.serenity.NewVacationRequestSteps;
 
 @RunWith(SerenityRunner.class)
-public class SelectDataTest {
+public class VerifyCorrectTypesInColumns {
 
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
@@ -33,7 +33,7 @@ public class SelectDataTest {
 	public TrackerSteps newTrack;
 
 	@Test
-	public void verify_if_the_application_allowed_to_select_an_erlier_endDate_than_the_startDate() {
+	public void verify_if_the_application_display_correct_type_in_colums_from_vacation_tracker_page() {
 		endUser.is_the_home_page();
 		endUser.login_as_PM();
 		endUser.access_track_tab();

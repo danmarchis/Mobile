@@ -50,7 +50,12 @@ public class TrackerPage extends PageObject {
 
 	@FindBy(css = "#buildings dl dt div.hida")
 	private WebElementFacade dropDownBilding;
-
+	
+	
+	@FindBy(css = "table tbody th:nth-child(1) a")
+	private WebElementFacade employeeNameColumn;
+	
+	
 	@FindBy(css = "#departments dl dt div.hida")
 	private WebElementFacade dropDownDepartaments;
 
@@ -72,7 +77,11 @@ public class TrackerPage extends PageObject {
 	public void sortByEmployeeName() {
 		employeeName.click();
 	}
-
+	
+	
+	public void clickEmployeeNameColumn() {
+		employeeNameColumn.click();
+	}
 	public void checkMobileDepartament() {
 		checkMobileDep.click();
 	}
@@ -275,6 +284,14 @@ public class TrackerPage extends PageObject {
 			}
 		}
 		return result;
+	}
+
+
+	public void verifySortedColumn(List<EmployeeVacationModel> employeeNameList) {
+		
+		
+		// TODO Auto-generated method stub
+		
 	}
 
 	

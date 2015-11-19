@@ -36,6 +36,8 @@ public class Order_track_test {
 		endUser.access_track_tab();
 		trUser.sort_by_employee1();
 		trUser.clickStartDate();
+		trUser.selectclickEmployeeNameColumn();
+		
 
 	}
 	

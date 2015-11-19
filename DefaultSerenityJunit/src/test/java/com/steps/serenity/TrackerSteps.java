@@ -28,7 +28,12 @@ public class TrackerSteps extends ScenarioSteps {
 	public void access_track_tab() {
 		sitePage.accesTracker();
 	}
-
+	
+	
+	@Step
+	public void selectclickEmployeeNameColumn() {
+		tracker.clickEmployeeNameColumn();
+	}
 	@Step
 	public void sort_by_employee() {
 		tracker.sortByEmployeeName();
@@ -116,6 +121,16 @@ public class TrackerSteps extends ScenarioSteps {
 		
 	//	nextPageTrack();
 	}
+	
+	/*
+	@Step
+	public void showIfElementsAreWellSorted(String type){
+	
+		List<EmployeeVacationModel> result = grabVacationsList();	
+		tracker.verifySortedColumn(result) ;
+		*/
+	//	nextPageTrack();
+	
 	/*
 	 * public void showIfDepartamentTypeIsCorrect(){
 	 * tracker.verifyIfDepartamentSelectedIsTrue(); }
