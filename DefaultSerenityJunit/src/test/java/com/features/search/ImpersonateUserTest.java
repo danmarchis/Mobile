@@ -31,14 +31,12 @@ public class ImpersonateUserTest {
 		loginSteps.login_as_DM();
 		loginSteps.navigateTo("http://172.22.4.88:9090/group/control_panel?doAsGroupId=10180&refererPlid=86301");
 		
-//		impersonateSteps.go_to();
-//		impersonateSteps.ctrl_panel();
 		impersonateSteps.users_and_org();
 		impersonateSteps.name_field();;
-//		impersonateSteps.enter_username("melian");
-//		impersonateSteps.search_option();
-//		impersonateSteps.findUserAndImpersonate("emilian.melian1");
-		impersonateSteps.findUserAndImpersonate("alecsandru.alupoaie");
+		impersonateSteps.enter_username("melian");
+		impersonateSteps.search_option();
+		impersonateSteps.findUserAndImpersonate("emilian.melian1");
+
 	
 	
 	}
