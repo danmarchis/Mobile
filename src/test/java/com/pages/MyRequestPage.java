@@ -123,9 +123,18 @@ public class MyRequestPage extends PageObject {
 
 	public void verifyStartDate(List<EmployeeVacationModel> ListElements, String type) {
 
+		boolean isPresent = false;
+		
+		theFor:
 		for (EmployeeVacationModel startDate : ListElements) {
-			Assert.assertTrue("The row does not contains the expected type", startDate.getStartDate().contains(type));
+			isPresent = startDate.getStartDate().contains(type);
+			if(isPresent){
+				break theFor;
+			}
 		}
+
+		Assert.assertTrue("The row does not contains the expected type", isPresent);
+
 	}
 
 	public boolean isNextPresent() {
