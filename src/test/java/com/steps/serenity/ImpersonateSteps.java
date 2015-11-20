@@ -46,5 +46,10 @@ public class ImpersonateSteps extends ScenarioSteps {
 		userListPage.findUserAndImpersonate(string);
 	}
 	
+	@Step
+	public void navigateTo(String URL){
+		getDriver().get(URL);
+	}
+	
 	
 }
