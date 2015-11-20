@@ -45,8 +45,8 @@ public class NewVacationRequestTest {
     	logInSteps.is_the_home_page();
     	logInSteps.login_as_tester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(1, "Feb", 2018);
-    	newVacationRequestSteps.selectEndDate(1, "Feb", 2018);
+    	newVacationRequestSteps.selectStartDate(5, "Feb", 2018);
+    	newVacationRequestSteps.selectEndDate(5, "Feb", 2018);
     	newVacationRequestSteps.Holiday();
     	newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
@@ -57,18 +57,18 @@ public class NewVacationRequestTest {
         myrequest.click_OneToFiveDays();
         myrequest.click_Pending();
         myrequest.click_Apply();
-        myrequest.showEmployeeIfExistStartDate("1/02/2018");
+        myrequest.showEmployeeIfExistStartDate("5/02/2018");
     
     }
 
    
-   /* @Test
+    @Test
     public void Vacation_without_payment_request() 
     {
    
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(10, "Oct", 2016);
-    	newVacationRequestSteps.selectEndDate(10, "Oct", 2016);
+    	newVacationRequestSteps.selectStartDate(6, "Feb", 2018);
+    	newVacationRequestSteps.selectEndDate(6, "Feb", 2018);
     	newVacationRequestSteps.VacationWithoutPayment();
     	newVacationRequestSteps.enter_DurationBox("mar");
     	newVacationRequestSteps.enter_InstitutionBox("para");
@@ -76,7 +76,12 @@ public class NewVacationRequestTest {
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
         newVacationRequestSteps.verifyMessage("Your request completed successfully.");
-    	
+        myrequest.click_MyRequestFromLeftMenu();
+        myrequest.click_VacationWithoutPayment();;
+        myrequest.click_OneToFiveDays();
+        myrequest.click_Pending();
+        myrequest.click_Apply();
+        myrequest.showEmployeeIfExistStartDate("6/02/2018");
     }
 
     
@@ -85,13 +90,19 @@ public class NewVacationRequestTest {
     {
    
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(10, "Oct", 2016);
-    	newVacationRequestSteps.selectEndDate(10, "Oct", 2016);
+    	newVacationRequestSteps.selectStartDate(7, "Feb", 2018);
+    	newVacationRequestSteps.selectEndDate(7, "Feb", 2018);
     	newVacationRequestSteps.SickLeaveBox();
         newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
         newVacationRequestSteps.verifyMessage("Your request completed successfully.");
+        myrequest.click_MyRequestFromLeftMenu();
+        myrequest.click_SickLeave();
+        myrequest.click_OneToFiveDays();
+        myrequest.click_Pending();
+        myrequest.click_Apply();
+        myrequest.showEmployeeIfExistStartDate("7/02/2018");
     	
     }
 
@@ -101,13 +112,19 @@ public class NewVacationRequestTest {
     {
    
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(10, "Oct", 2016);
-    	newVacationRequestSteps.selectEndDate(10, "Oct", 2016);
+    	newVacationRequestSteps.selectStartDate(8, "Feb", 2018);
+    	newVacationRequestSteps.selectEndDate(8, "Feb", 2018);
     	newVacationRequestSteps.SpecialVacationBox();
         newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
         newVacationRequestSteps.verifyMessage("Your request completed successfully.");
+        myrequest.click_MyRequestFromLeftMenu();
+        myrequest.click_SpecialVacation();
+        myrequest.click_OneToFiveDays();
+        myrequest.click_Pending();
+        myrequest.click_Apply();
+        myrequest.showEmployeeIfExistStartDate("8/02/2018");
     	
     }
 
@@ -117,14 +134,20 @@ public class NewVacationRequestTest {
     {
    
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(10, "Oct", 2016);
-    	newVacationRequestSteps.selectEndDate(10, "Oct", 2016);
+    	newVacationRequestSteps.selectStartDate(9, "Feb", 2018);
+    	newVacationRequestSteps.selectEndDate(9, "Feb", 2018);
     	newVacationRequestSteps.SpecialVacationBox();
         newVacationRequestSteps.select_SpecialVacationOptionChildBirth();
     	newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
         newVacationRequestSteps.verifyMessage("Your request completed successfully.");
+        myrequest.click_MyRequestFromLeftMenu();
+        myrequest.click_SpecialVacation();
+        myrequest.click_OneToFiveDays();
+        myrequest.click_Pending();
+        myrequest.click_Apply();
+        myrequest.showEmployeeIfExistStartDate("9/02/2018");
     	
     }
 
@@ -133,14 +156,20 @@ public class NewVacationRequestTest {
     {
    
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(10, "Oct", 2016);
-    	newVacationRequestSteps.selectEndDate(10, "Oct", 2016);
+    	newVacationRequestSteps.selectStartDate(12, "Feb", 2018);
+    	newVacationRequestSteps.selectEndDate(12, "Feb", 2018);
     	newVacationRequestSteps.SpecialVacationBox();
         newVacationRequestSteps.select_SpecialVacationOptionFuneral();
     	newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
         newVacationRequestSteps.verifyMessage("Your request completed successfully.");
+        myrequest.click_MyRequestFromLeftMenu();
+        myrequest.click_SpecialVacation();
+        myrequest.click_OneToFiveDays();
+        myrequest.click_Pending();
+        myrequest.click_Apply();
+        myrequest.showEmployeeIfExistStartDate("12/02/2018");
     	
     }
 
@@ -149,14 +178,20 @@ public class NewVacationRequestTest {
     {
    
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(10, "Oct", 2016);
-    	newVacationRequestSteps.selectEndDate(10, "Oct", 2016);
+    	newVacationRequestSteps.selectStartDate(13, "Feb", 2018);
+    	newVacationRequestSteps.selectEndDate(13, "Feb", 2018);
     	newVacationRequestSteps.SpecialVacationBox();
         newVacationRequestSteps.select_SpecialVacationOptionOther();
     	newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
         newVacationRequestSteps.verifyMessage("Your request completed successfully.");
+        myrequest.click_MyRequestFromLeftMenu();
+        myrequest.click_SpecialVacation();
+        myrequest.click_OneToFiveDays();
+        myrequest.click_Pending();
+        myrequest.click_Apply();
+        myrequest.showEmployeeIfExistStartDate("13/02/2018");
     	
     }
 
@@ -166,13 +201,19 @@ public class NewVacationRequestTest {
     {
    
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(10, "Oct", 2016);
-    	newVacationRequestSteps.selectEndDate(10, "Oct", 2016);
+    	newVacationRequestSteps.selectStartDate(14, "Feb", 2018);
+    	newVacationRequestSteps.selectEndDate(14, "Feb", 2018);
     	newVacationRequestSteps.MaternityLeaveBox();
         newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
         newVacationRequestSteps.verifyMessage("Your request completed successfully.");
+        myrequest.click_MyRequestFromLeftMenu();
+        myrequest.click_MaternityLeave();
+        myrequest.click_OneToFiveDays();
+        myrequest.click_Pending();
+        myrequest.click_Apply();
+        myrequest.showEmployeeIfExistStartDate("14/02/2018");
     	
     }
 
@@ -181,8 +222,8 @@ public class NewVacationRequestTest {
     {
     	
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(10, "Oct", 2016);
-    	newVacationRequestSteps.selectEndDate(10, "Oct", 2016);
+    	newVacationRequestSteps.selectStartDate(19, "Feb", 2018);
+    	newVacationRequestSteps.selectEndDate(19, "Feb", 2018);
     	newVacationRequestSteps.MaternityLeaveBox();
     	newVacationRequestSteps.select_MaternityLeaveOptionConcediu();
     	newVacationRequestSteps.enter_DurationBox("para");
@@ -191,11 +232,17 @@ public class NewVacationRequestTest {
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
         newVacationRequestSteps.verifyMessage("Your request completed successfully.");
+        myrequest.click_MyRequestFromLeftMenu();
+        myrequest.click_MaternityLeave();
+        myrequest.click_OneToFiveDays();
+        myrequest.click_Pending();
+        myrequest.click_Apply();
+        myrequest.showEmployeeIfExistStartDate("19/02/2018");
     	
     }
 
     
-    */
+    
 
 } 
 
