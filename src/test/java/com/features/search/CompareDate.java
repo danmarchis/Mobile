@@ -24,7 +24,7 @@ public class CompareDate {
 	
 	@Test
 	public void testare(){
-		endUser.is_the_home_page();
+		endUser.getHomePage();
 		endUser.login_as_PM();
 	
 	}

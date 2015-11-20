@@ -1,7 +1,7 @@
 package com.steps.serenity;
 
 import com.pages.ViewVacationsPage;
-import com.pages.Inbox;
+import com.pages.InboxPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import com.pages.SiteMenuPage;

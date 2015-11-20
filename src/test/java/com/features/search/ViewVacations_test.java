@@ -25,8 +25,8 @@ public class ViewVacations_test {
 
 	@Test
 	public void approve_all_vacations_inbox() {
-		loginSteps.is_the_home_page();
-		loginSteps.start_login();
+		loginSteps.getHomePage();
+		loginSteps.startLogin();
 		loginSteps.login_as_DM();
 		viewFilteredVacations.click_view_vacation();
 		viewFilteredVacations.tick_holiday_type();

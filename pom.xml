@@ -37,7 +37,7 @@
 			<url>http://jcenter.bintray.com</url>
 		</pluginRepository>
 	</pluginRepositories>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>javax.mail</groupId>

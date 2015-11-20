@@ -35,8 +35,8 @@ public class ApproveAllVacationsinInbox {
 	
 	@Test
 	public void approve_all_vacations_inbox() {
-		loginSteps.is_the_home_page();
-		loginSteps.start_login();
+		loginSteps.getHomePage();
+		loginSteps.startLogin();
 		loginSteps.login_as_PM();
 		newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(19, "Nov", 2015);
@@ -50,8 +50,8 @@ public class ApproveAllVacationsinInbox {
     	newVacationRequestSteps.Save();
     	//signOutSteps.access_user_options();
     	signOutSteps.sign_out();
-    	loginSteps.is_the_home_page();
-		loginSteps.start_login();
+    	loginSteps.getHomePage();
+		loginSteps.startLogin();
 		loginSteps.login_as_DM();
 		approveAllVacationsinInboxSteps.click_inbox_page();
 		approveAllVacationsinInboxSteps.tick_all_vacations();

@@ -34,7 +34,7 @@ public class TestVerifyNextPage {
 
 	@Test
 	public void verify_if_the_application_allowed_to_select_an_erlier_endDate_than_the_startDate() {
-		endUser.is_the_home_page();
+		endUser.getHomePage();
 		endUser.login_as_PM();
 		endUser.access_track_tab();
 		//newDateSteps.selectStartDate_track(17, "Nov", 2015);

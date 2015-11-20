@@ -28,7 +28,7 @@ public class VacationRequest_test {
 
 	@Test
 	public void access_tracker_tab() {
-		endUser.is_the_home_page();
+		endUser.getHomePage();
 		endUser.login_as_tester();
 		endUser.access_newVacationRequest_tab();
 
