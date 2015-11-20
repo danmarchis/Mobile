@@ -65,7 +65,7 @@ public class NewVacationRequestTest {
     
     }
 
-   /*
+   
     @Test
     public void Vacation_without_payment_request() 
     {
@@ -258,6 +258,6 @@ public class NewVacationRequestTest {
 
     
     
-*/
+
 } 
 
