@@ -57,6 +57,11 @@ public class MyRequestSteps extends ScenarioSteps {
     public void click_StartDate(){
 	  Request.StartDate();
   }
+  
+  @Step
+  public void select_VacationStatusCheckAllBox(){
+	 Request.VacationStatusCheckAllBox();
+  }
 
 
   @Step

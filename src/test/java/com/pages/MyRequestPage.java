@@ -55,6 +55,14 @@ public class MyRequestPage extends PageObject {
 
 	@FindBy (css= ".lfr-search-container ")
 	private WebElement vacationContainer;
+	
+	@FindBy (id= "_evovacation_WAR_EvoVacationportlet_vacationStatusALLCheckbox")
+	private WebElement VacationStatusAllCheckBox;
+	
+	
+	public void VacationStatusCheckAllBox (){
+		VacationStatusAllCheckBox.click();
+	}
 
 	public void Holiday() {
 		HolidayButton.click();
