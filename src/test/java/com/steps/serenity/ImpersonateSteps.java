@@ -3,6 +3,7 @@ package com.steps.serenity;
 import com.pages.ImpersonatePage;
 import com.pages.UserListPage;
 
+import constantPckg.ConstantClass;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
@@ -49,6 +50,11 @@ public class ImpersonateSteps extends ScenarioSteps {
 	@Step
 	public void navigateTo(String URL){
 		getDriver().get(URL);
+	}
+	
+	@Step
+	public void sign_out() {
+		impersonatePage.openAt(ConstantClass.ENV_URL + "/c/portal/logout");
 	}
 	
 	

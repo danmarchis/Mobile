@@ -42,7 +42,7 @@ public class NewVacationRequestTest {
     @Test
     public void Holiday_request() 
     {
-    	logInSteps.is_the_home_page();
+    	logInSteps.getHomePage();
     	logInSteps.login_as_tester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(30, "Jan", 2018);

@@ -27,8 +27,8 @@ public class VacationReportTest {
 	
 	@Test
 	public void approve_all_vacations_inbox() {
-		loginSteps.is_the_home_page();
-		loginSteps.start_login();
+		loginSteps.getHomePage();
+		loginSteps.startLogin();
 		loginSteps.login_as_DM();
 		vacationsReportSteps.click_vacations_report();
 		vacationsReportSteps.selectMonth("November");

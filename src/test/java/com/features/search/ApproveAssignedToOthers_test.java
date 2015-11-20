@@ -26,8 +26,8 @@ public class ApproveAssignedToOthers_test {
 
 	@Test
 	public void approve_all_vacations_inbox() {
-		loginSteps.is_the_home_page();
-		loginSteps.start_login();
+		loginSteps.getHomePage();
+		loginSteps.startLogin();
 		loginSteps.login_as_DM();
 		approveAllAssignedToOthers.click_inbox_page();
 		approveAllAssignedToOthers.click_assign_to_others();
