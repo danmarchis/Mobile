@@ -57,9 +57,41 @@ public class MyRequestSteps extends ScenarioSteps {
     public void click_StartDate(){
 	  Request.StartDate();
   }
+  
+  @Step
+  public void select_VacationStatusCheckAllBox(){
+	 Request.VacationStatusCheckAllBox();
+  }
 
 
- 
+  @Step
+	public List<EmployeeVacationModel> grabVacationsList(){
+		List<EmployeeVacationModel> finalResultList = new ArrayList<EmployeeVacationModel>(); 
+		do{
+			List<EmployeeVacationModel> partialList = Request.grabEmployeeVacationsList();
+			finalResultList.addAll(partialList);
+		}while(Request.isNextPresent());
+		
+		return finalResultList;
+	}
+	
+	
+	
+	@Step
+	public void showEmployeeIfExistStartDate(String type){
+	
+		List<EmployeeVacationModel> result = grabVacationsList();	
+		Request.verifyStartDate(result,type) ;
+
+
+
+
+
+
+
+
+
+	}
 
 
 

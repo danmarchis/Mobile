@@ -5,7 +5,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
-public class Inbox extends PageObject {
+public class InboxPage extends PageObject {
 	
 	@FindBy(id="_evovacation_WAR_EvoVacationportlet_multipleApproveButton")
     private WebElementFacade approveButton;

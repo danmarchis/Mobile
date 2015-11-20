@@ -1,13 +1,13 @@
 package com.steps.serenity;
 
-import com.pages.Inbox;
+import com.pages.InboxPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
 public class RejectAllVacationsInInboxSteps extends ScenarioSteps {
 	
-	Inbox inbox2;
+	InboxPage inbox2;
 
 	
 	@Step

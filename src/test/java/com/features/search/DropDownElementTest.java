@@ -13,36 +13,31 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.serenity.TrackerSteps;
 import com.pages.LoginPage;
-import com.steps.serenity.DatePickerActionsSteps;
 import com.steps.serenity.LoginSteps;
-
+import com.steps.serenity.NewVacationRequestSteps;
 
 @RunWith(SerenityRunner.class)
-public class AscendingOrderInStatusColumn {
+public class DropDownElementTest {
+
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 	
 	@Steps
 	public LoginSteps endUser;
 	
-	
+	@Steps
+	public NewVacationRequestSteps newVacationRequestSteps;
 	
 	@Steps
 	public TrackerSteps newTrack;
-	
-	@Steps
-	public DatePickerActionsSteps newDateSteps;
-	
+
 	@Test
-	public void access_tracker_tab() {
+	public void verify_if_the_drop_down_elements_are_visible() {
 		endUser.getHomePage();
 		endUser.login_as_PM();
 		endUser.access_track_tab();
-		
-		
-		newDateSteps.selectStartDate_track(17, "Nov", 2015);
-		
-		newDateSteps.selectEndDate_track(31, "Dec", 2015);
+		//newTrack.selectStartDate_track(17, "Nov", 2015);
+    	//newVacationRequestSteps.selectEndDate_track(26, "Nov", 2015);
     	newTrack.showDropDownBuilding();
     	newTrack.showDropDownAll();
     
@@ -53,13 +48,13 @@ public class AscendingOrderInStatusColumn {
     	newTrack.showDepartamentsDropDownAll();
     	
     	newTrack.chooseDepartaments("Mobile");
-    	
+    	//newTrack.checkMobile();
     	newTrack.clickApply();
-		
-    	newTrack.verifyIfStatusColumnIsInAscendingOrder();
+		//newTrack.showIfTypeIsCorrect("Mobile");
+    	//newTrack.verifyThatTypeIsCorrect("Mobile");
+    	//newTrack.showEmployeeVacationsList();
+    	//newTrack.showIfDepartamentTypeIsCorrect();
 
 	}
-
-
-
+	
 }

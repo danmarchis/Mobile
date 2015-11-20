@@ -36,7 +36,7 @@ public class VerifyStusColumnTest {
 	
 	@Test
 	public void verify_If_NoStatus_Elements_Are_Allowed_In_Status_Column() {
-		endUser.is_the_home_page();
+		endUser.getHomePage();
 		endUser.login_as_PM();
 		endUser.access_track_tab();
 		

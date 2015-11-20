@@ -28,8 +28,8 @@ public class ImpersonateTest {
 
 	@Test
 	public void approve_all_vacations_inbox() {
-		loginSteps.is_the_home_page();
-		loginSteps.start_login();
+		loginSteps.getHomePage();
+		loginSteps.startLogin();
 		loginSteps.login_as_DM();
 		impersonateSteps.go_to();
 		impersonateSteps.ctrl_panel();
@@ -37,6 +37,7 @@ public class ImpersonateTest {
 		impersonateSteps.name_field();;
 		impersonateSteps.enter_username("melian");
 		impersonateSteps.search_option();
+		
 	
 	
 	}

@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 import com.steps.serenity.LoginSteps;
+import com.steps.serenity.NewVacationRequestSteps;
+import com.steps.serenity.ApproveAllVacationsinInboxSteps;
 import com.steps.serenity.ImpersonateSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
@@ -24,20 +26,35 @@ public class ImpersonateUserTest {
 	public ImpersonateSteps impersonateSteps;
 	
 
+	@Steps
+	public NewVacationRequestSteps newVacationRequestSteps;
+	
+	@Steps
+	public ApproveAllVacationsinInboxSteps approveAllVacationsinInboxSteps;
+	
+
 	@Test
 	public void approve_all_vacations_inbox() {
-		loginSteps.is_the_home_page();
-		loginSteps.start_login();
+		loginSteps.getHomePage();
 		loginSteps.login_as_DM();
 		loginSteps.navigateTo("http://172.22.4.88:9090/group/control_panel?doAsGroupId=10180&refererPlid=86301");
-		
 		impersonateSteps.users_and_org();
 		impersonateSteps.name_field();;
 		impersonateSteps.enter_username("melian");
 		impersonateSteps.search_option();
 		impersonateSteps.findUserAndImpersonate("emilian.melian1");
-
-	
-	
+		impersonateSteps.navigateTo("http://172.22.4.88:9090/vacation");
+		newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
+		newVacationRequestSteps.selectStartDate(16,"Dec",2015);
+		newVacationRequestSteps.selectEndDate(16, "Dec", 2015);
+		newVacationRequestSteps.Holiday();
+		newVacationRequestSteps.Save();
+		impersonateSteps.sign_out();
+		loginSteps.getHomePage();
+		loginSteps.login_as_DM();
+		approveAllVacationsinInboxSteps.click_inbox_page();
+		approveAllVacationsinInboxSteps.tick_all_vacations();
+		approveAllVacationsinInboxSteps.approve_all_vacations();
+		
 	}
 }

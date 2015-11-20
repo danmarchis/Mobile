@@ -1,6 +1,5 @@
 package com.features.search;
 
-
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Issue;
 import net.thucydides.core.annotations.Managed;
@@ -14,39 +13,27 @@ import org.openqa.selenium.WebDriver;
 
 import com.steps.serenity.TrackerSteps;
 import com.pages.LoginPage;
-import com.steps.serenity.DatePickerActionsSteps;
 import com.steps.serenity.LoginSteps;
-import com.steps.serenity.NewVacationRequestSteps;
+
 
 @RunWith(SerenityRunner.class)
-public class TrackSelectDatesTest {
-@Managed(uniqueSession = true)
+public class VacationRequest_test {
+
+	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 	
 	@Steps
 	
 	public LoginSteps endUser;
-	
-	
-	@Steps
-	public DatePickerActionsSteps newDatePickerSelectDate;
-	
-	@Steps
-	public TrackerSteps newTrack;
 
 	@Test
-	public void verify_if_the_application_allowed_to_select_an_erlier_endDate_than_the_startDate() {
+	public void access_tracker_tab() {
 		endUser.getHomePage();
-		endUser.login_as_PM();
-		endUser.access_track_tab();
-		newDatePickerSelectDate.selectStartDate_track(17, "Nov", 2015);
-		newDatePickerSelectDate.selectEndDate_track(26, "Nov", 2015);
-		
-		
-    	newTrack.clickApply();
-    	
-    	
+		endUser.login_as_tester();
+		endUser.access_newVacationRequest_tab();
 
 	}
-	
+
+
+
 }
