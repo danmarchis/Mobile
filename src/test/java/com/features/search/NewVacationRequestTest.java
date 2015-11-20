@@ -45,8 +45,8 @@ public class NewVacationRequestTest {
     	logInSteps.is_the_home_page();
     	logInSteps.login_as_tester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(22, "Jan", 2018);
-    	newVacationRequestSteps.selectEndDate(22, "Jan", 2018);
+    	newVacationRequestSteps.selectStartDate(30, "Jan", 2018);
+    	newVacationRequestSteps.selectEndDate(30, "Jan", 2018);
     	newVacationRequestSteps.Holiday();
     	newVacationRequestSteps.CommentClick();
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
@@ -57,7 +57,7 @@ public class NewVacationRequestTest {
         myrequest.click_OneToFiveDays();
         myrequest.click_Pending();
         myrequest.click_Apply();
-        myrequest.click_StartDate();
+        myrequest.showEmployeeIfExistStartDate("30/01/2018");
     
     }
 
