@@ -1,6 +1,9 @@
 package com.pages;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 import org.junit.Assert;
@@ -16,10 +19,13 @@ import tools.EmployeeVacationModel;
 
 @DefaultUrl(ConstantClass.BASE_URL)
 public class TrackerPage extends PageObject {
-
+	//a[href*='orderByCol=status&_evovacation_WA'
 	@FindBy(css = "a[href*='orderByCol=employeName']")
 	private WebElementFacade employeeName;
-
+	
+	
+	@FindBy(css = "a[href*='orderByCol=status&_evovacation_WA']")
+	private WebElementFacade statusColumn;
 	// datePicker
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_trackerEndDate")
@@ -27,8 +33,8 @@ public class TrackerPage extends PageObject {
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_trackerStartDate")
 	private WebElementFacade startDate;
-	
-	//Page list container
+
+	// Page list container
 	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_vacationTrackerTable")
 	private WebElement vacationContainer;
 
@@ -50,12 +56,10 @@ public class TrackerPage extends PageObject {
 
 	@FindBy(css = "#buildings dl dt div.hida")
 	private WebElementFacade dropDownBilding;
-	
-	
+
 	@FindBy(css = "table tbody th:nth-child(1) a")
 	private WebElementFacade employeeNameColumn;
-	
-	
+
 	@FindBy(css = "#departments dl dt div.hida")
 	private WebElementFacade dropDownDepartaments;
 
@@ -73,15 +77,15 @@ public class TrackerPage extends PageObject {
 
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_evozonVacationsSearchContainerPageIteratorBottom_itemsPerPage")
 	private WebElementFacade dropDownButton;
-	
+
 	public void sortByEmployeeName() {
 		employeeName.click();
 	}
-	
-	
+
 	public void clickEmployeeNameColumn() {
 		employeeNameColumn.click();
 	}
+
 	public void checkMobileDepartament() {
 		checkMobileDep.click();
 	}
@@ -162,15 +166,14 @@ public class TrackerPage extends PageObject {
 			System.out.println("ceasdsdsd:" + row.getText());
 			if (row.getText().contains(type)) {
 				found = true;
-			}
-			else{
-				found=false;
+			} else {
+				found = false;
 				Assert.assertTrue("The row does not contains the expected type", found);
 				break;
 			}
-	
+
 		}
-		
+
 	}
 
 	public int getNumberOfPages() {
@@ -198,29 +201,30 @@ public class TrackerPage extends PageObject {
 	 * for (WebElementFacade i : departmentList)
 	 * Assert.assertTrue(i.getText().contains(department)); }
 	 */
-	
-	public void ifTypeisCorrect(String terms){
+
+	public void ifTypeisCorrect(String terms) {
 		for (int i = 0; i < 2; i++) {
 			System.out.println("Ruleaza");
-		//	List<EmployeeVacationModel> result = grabVacationsList();
-		//	verifyThatTypeIsCorrectInDepartmentColumn(terms);
+			// List<EmployeeVacationModel> result = grabVacationsList();
+			// verifyThatTypeIsCorrectInDepartmentColumn(terms);
 			goToNextPage();
 			waitABit(2000);
 			System.out.println(i);
-			}
+		}
 	}
 
 	public List<EmployeeVacationModel> grabEmployeeVacationsList() {
 		element(resultListContainer).waitUntilVisible();
-		
+
 		List<EmployeeVacationModel> resultList = new ArrayList<EmployeeVacationModel>();
-		
-		List<WebElement> entryList = resultListContainer.findElements(By.cssSelector("tr.results-row:not(.lfr-template)"));
-		
+
+		List<WebElement> entryList = resultListContainer
+				.findElements(By.cssSelector("tr.results-row:not(.lfr-template)"));
+
 		for (WebElement webElement : entryList) {
 			System.out.println("Element: " + webElement.getText());
 			EmployeeVacationModel entryNow = new EmployeeVacationModel();
-			
+
 			String name = webElement.findElement(By.cssSelector("td.col-employee-name")).getText();
 			String startDate = webElement.findElement(By.cssSelector("td[class*='start.date']")).getText();
 			String endDate = webElement.findElement(By.cssSelector("td[class*='end.date']")).getText();
@@ -229,9 +233,6 @@ public class TrackerPage extends PageObject {
 			String type = webElement.findElement(By.cssSelector("td[class*='type']")).getText();
 			String status = webElement.findElement(By.cssSelector("td[class*='status']")).getText();
 
-
-
-				
 			entryNow.setEmployeeName(name);
 			entryNow.setStartDate(startDate);
 			entryNow.setEndDate(endDate);
@@ -241,44 +242,42 @@ public class TrackerPage extends PageObject {
 			entryNow.setStatus(status);
 
 			resultList.add(entryNow);
-			
-		}
-		
-		return resultList;
-	}
-	
-	public void verifyDeparment(List<EmployeeVacationModel> ListElements,String type){
-		
-		for (EmployeeVacationModel department : ListElements) {
-				Assert.assertTrue("The row does not contains the expected type", department.getDepartment().contains(type));
-			}
+
 		}
 
+		return resultList;
+	}
+
+	public void verifyDeparment(List<EmployeeVacationModel> ListElements, String type) {
+
+		for (EmployeeVacationModel department : ListElements) {
+			Assert.assertTrue("The row does not contains the expected type", department.getDepartment().contains(type));
+		}
+	}
+
 	public void nextPage() {
-		while(nextButton.isCurrentlyVisible()){
+		while (nextButton.isCurrentlyVisible()) {
 			nextButton.click();
 		}
 		//
-		
+
 	}
 
 	public void clickOnDropDown() {
-		
-		
+
 	}
-	
-	public void verifyDepartment(String department){
+
+	public void verifyDepartment(String department) {
 		List<WebElement> departmentList = getDriver().findElements(By.cssSelector(""));
-		
-		
+
 	}
 
 	public boolean isNextPresent() {
 		boolean result = false;
 		element(vacationContainer).waitUntilVisible();
 		List<WebElement> nextButtonList = vacationContainer.findElements(By.cssSelector(".aui-paginator-next-link"));
-		if(nextButtonList.size() > 0){
-			if(nextButtonList.get(0).getTagName().contentEquals("a")){
+		if (nextButtonList.size() > 0) {
+			if (nextButtonList.get(0).getTagName().contentEquals("a")) {
 				nextButtonList.get(0).click();
 				result = true;
 			}
@@ -286,14 +285,72 @@ public class TrackerPage extends PageObject {
 		return result;
 	}
 
+	public void verifyStautusColumn(List<EmployeeVacationModel> ListElements) {
+		EmployeeVacationModel model = new EmployeeVacationModel();
 
-	public void verifySortedColumn(List<EmployeeVacationModel> employeeNameList) {
+		List<String> officialList = Arrays.asList("Rejected", "Approved", "Cancelled", "Withdrawn", "Pending");
+
+		for (String string : officialList) {
+			System.out.println("official list  " + string);
+		}
+
+		List<String> listFromTable = new ArrayList<String>();
+
+		for (EmployeeVacationModel status : ListElements) {
+
+			String stat = status.getStatus();
+			listFromTable.add(status.getStatus());
+			// Assert.assertTrue("The row does not contains the expected type",
+			// department.getDepartment().contains(type));
+		}
 		
 		
+		List<String> listBeforeNoDuplicate = new ArrayList<String>(new LinkedHashSet<String>(listFromTable));
+
+		
+		
+		for (String string : listBeforeNoDuplicate) {
+			System.out.println("Verify if no duplicate " + string);
+		}
+
+		if (officialList.equals(listBeforeNoDuplicate)) {
+			System.out.println("lists are equal");
+		} else {
+			System.out.println("lists are not equal");
+		}
+		
+		boolean noElement = false;
+		// List<String> uncommon = new ArrayList<String> ();
+		for (String s : listBeforeNoDuplicate) {
+			if (!officialList.contains(s)) {
+				Assert.assertTrue(s + "was found but should not fgfgfgffg !!!", false);
+			}
+
+		}
+		for (String s : officialList) {
+			// if (!listBeforeNoDuplicate.contains(s)) uncommon.add(s);
+			Assert.assertTrue(s + "was found but should not !!!", !listBeforeNoDuplicate.contains(s));
+		}
+
+		System.out.println("   ");
+		System.out.println("   ");
+
+		// for (String string : uncommon) {
+		// System.out.println("this element is not a status "+string);
+
+	}
+	/*
+	 * boolean equallist=false; if(uncommon.size()>0){ Assert.assertTrue(
+	 * "List contain an non-status element in status column  ", equallist); }
+	 * 
+	 */
+
+	public void clickOnStatusColumnHeader() {
+		statusColumn.click();
 		// TODO Auto-generated method stub
 		
 	}
 
-	
-	}
-	
+}
+
+// }
