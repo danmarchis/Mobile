@@ -43,7 +43,7 @@ public class WithDrawNewVacationRequestTest {
     public NewVacationRequestSteps newVacationRequestSteps;
     
     @Test    
-    public void Holiday_request() 
+    public void Holiday_request_and_WithDraw() 
     {
     	logInSteps.getHomePage();
     	logInSteps.loginAsTester();
