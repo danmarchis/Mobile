@@ -28,7 +28,7 @@ public class LoginPage extends PageObject{
 			@FindBy(css="input[type='submit']")
 			private WebElementFacade buttonClick;
 			
-			public void add_screen_name(String keyword) {
+			public void addScreenName(String keyword) {
 				screenName.type(keyword);
 			}
 			public void add_password(String keyword) {

@@ -1,10 +1,12 @@
 package com.features.search;
 
+import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Issue;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.junit.annotations.UseTestDataFrom;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,8 +23,11 @@ import com.pages.LoginPage;
 import com.steps.serenity.DatePickerActionsSteps;
 import com.steps.serenity.LoginSteps;
 import com.steps.serenity.NewVacationRequestSteps;
+import com.steps.serenity.SignOutSteps;
 
-@RunWith(SerenityRunner.class)
+@RunWith(SerenityParameterizedRunner.class)
+
+@UseTestDataFrom(separator=';',value="tools/page.csv")
 public class VerifyCorrectTypesInColumns {
 
 	@Managed(uniqueSession = true)
@@ -43,15 +48,22 @@ public class VerifyCorrectTypesInColumns {
 	@Steps
 	VerifyColumnTypesSteps verifyColumnTypes;
 	
+	@Steps
+	public SignOutSteps signout;
+	
+	public String department,type;
 	@Test
 	public void verify_if_the_application_display_correct_type_in_colums_from_vacation_tracker_page() {
+
 		loginSteps.getHomePage();
-		loginSteps.login_as_PM();
+		loginSteps.loginAsPM();
 		loginSteps.access_track_tab();
+
+		
 		
 		
 		newDateSteps.selectStartDate_track(17, "Nov", 2015);	
-		newDateSteps.selectEndDate_track(31, "Dec", 2015);
+		newDateSteps.selectEndDate_track(21, "Dec", 2015);
 		
 		
 		selectFilters.showDropDownBuilding();
@@ -60,14 +72,13 @@ public class VerifyCorrectTypesInColumns {
     	
 		selectFilters.showDropDownDepartaments();
 		selectFilters.checkAllInDepartamentsDropDown();
-		selectFilters.chooseDepartaments(ConstantClass.MOBILE_DEPARTAMENT);
+		selectFilters.chooseDepartaments(department);
     	
 		selectFilters.clickApply();
     	
 		
-		//newTrack.showEmployeeVacationsList("Nobile");
-	//	newTrack.verifyIfApplicationDisplayCorrectTypes("Nobile");
-		verifyColumnTypes.verifyIfApplicationDisplayCorrectTypes("Nobile");
+		verifyColumnTypes.verifyIfApplicationDisplayCorrectTypes(type);
+		//signout.signOut();
 
 	}
 	

@@ -11,7 +11,7 @@ public class VacationsReportSteps extends ScenarioSteps{
 	VacationsReportPage vacationsReportPage;
 	
 	@Step
-	public void click_vacations_report() {
+	public void clickVacationsReport() {
 	vacationsReportPage.exportMenu();
 }
 	
@@ -26,7 +26,7 @@ public class VacationsReportSteps extends ScenarioSteps{
 	}
 
 	@Step
-	public void select_pending() {
+	public void selectPending() {
 	vacationsReportPage.check_pending();
 	}
 	
@@ -36,7 +36,7 @@ public class VacationsReportSteps extends ScenarioSteps{
 	}
 	
 	@Step
-	public void select_export() {
+	public void selectExport() {
 	vacationsReportPage.export();
 	}
 	

@@ -43,7 +43,7 @@ public class VerifyColumnTypesSteps {
 	}
 	
 	@Step
-	public void verifyIfStatusColumnIsInAscendingOrder(String type) {
+	public void verifyIfColumnIsInAscendingOrder(String type) {
 		vacationTracker.selectColumn(type);
 		List<EmployeeVacationModel> result = grabVacationsList();
 		vacationTracker.verifyStautusColumnIsInAscendingOrder(result,type);

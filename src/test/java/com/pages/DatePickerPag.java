@@ -25,6 +25,8 @@ public class DatePickerPag extends PageObject {
 
 	public void setDate(int day, String month, int year) {
 		// click twice on title to open year view
+		
+		
 		title.click();
 		title.click();
 

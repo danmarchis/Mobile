@@ -4,22 +4,21 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import com.steps.serenity.ApproveAllVacationsAssignedToOthersInbox;
-import com.steps.serenity.ApproveAllVacationsinInboxSteps;
+import com.steps.serenity.ApproveAllVacationsAssignedToOthersInboxSteps;
 import com.steps.serenity.LoginSteps;
-
+import com.steps.serenity.ViewVacationsSteps;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
-public class ApproveAssignedToOthers_test {
+public class ViewVacationsTest {
 	
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 	
 	@Steps
-	public ApproveAllVacationsAssignedToOthersInbox approveAllAssignedToOthers;
+	public ViewVacationsSteps viewFilteredVacations;
 	
 	@Steps
 	public LoginSteps loginSteps;
@@ -28,10 +27,12 @@ public class ApproveAssignedToOthers_test {
 	public void approve_all_vacations_inbox() {
 		loginSteps.getHomePage();
 		loginSteps.startLogin();
-		loginSteps.login_as_DM();
-		approveAllAssignedToOthers.click_inbox_page();
-		approveAllAssignedToOthers.click_assign_to_others();
-		approveAllAssignedToOthers.tick_all_vacations();
-		approveAllAssignedToOthers.approve_all_vacations();	
+		loginSteps.loginAsDM();
+		viewFilteredVacations.clickViewVacation();
+		viewFilteredVacations.tickHolidayType();
+		viewFilteredVacations.tickPendingStatus();
+		viewFilteredVacations.clickApplyButton();	
+		viewFilteredVacations.checkRegistrationContent("Holiday");
+		viewFilteredVacations.checkRegistrationStatus("Pending");
 	}
 }

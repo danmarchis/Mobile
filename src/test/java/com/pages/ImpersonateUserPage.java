@@ -10,7 +10,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 
 @DefaultUrl(ConstantClass.ENV_URL)
 
-public class ImpersonatePage extends PageObject {
+public class ImpersonateUserPage extends PageObject {
 
 	@FindBy(id = "_145_mySites")
 	private WebElement goTo;
@@ -49,7 +49,7 @@ public class ImpersonatePage extends PageObject {
 		searchFormContainer.click();
 	}
 
-	public void enter_username(String keyword) {
+	public void enterUsername(String keyword) {
 		searchField.sendKeys(keyword);
 	}
 

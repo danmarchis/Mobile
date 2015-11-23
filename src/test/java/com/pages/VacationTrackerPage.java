@@ -36,7 +36,10 @@ public class VacationTrackerPage extends PageObject {
 	// Page list container
 	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_vacationTrackerTable")
 	private WebElement vacationContainer;
-
+	
+	
+	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_evozonVacationsSearchContainerPageIteratorBottom_itemsPerPage")
+	private WebElementFacade numberOfPageDropDown;
 	// end
 
 	public String departament_name;
@@ -65,6 +68,9 @@ public class VacationTrackerPage extends PageObject {
 	@FindBy(css = "#departments div.mutliSelect ul")
 	private WebElementFacade departmentsContainer;
 
+	@FindBy(css = "select.aui-field-input-menu ")
+	private WebElementFacade rowsNumber;
+	
 	@FindBy(css = "#buildings div.mutliSelect ul")
 	private WebElementFacade buildingContainer;
 
@@ -158,6 +164,28 @@ public class VacationTrackerPage extends PageObject {
 		}
 	}
 
+	
+	public void setNumberOfRows(String numberOfRows){
+		// departamentscheckAll.click();
+		numberOfPageDropDown.click();
+		//waitABit(500);
+		List<WebElement> numberOfRowsList = rowsNumber.findElements(By.cssSelector("option"));
+		System.out.println("lista");
+		for (WebElement rowsElement : numberOfRowsList) {
+			System.out.println("element: " + rowsElement.getText());
+			if (rowsElement.getText().contains(numberOfRows)) {
+				rowsElement.click();
+
+				System.out.println(rowsElement.getText().contains(numberOfRows));
+				break;
+			}
+			// departmentElement.findElement(By.cssSelector("input")).click();
+			// System.out.println(" aici = " + departmentElement.getText());
+			// break;
+			
+			
+		}
+	}
 	public void selectColumn(String type) {
 		if (type == "Status") {
 			clickOnStatusColumnHeader();
@@ -186,6 +214,8 @@ public class VacationTrackerPage extends PageObject {
 		}
 
 	}
+	
+	/*
 
 	public int getNumberOfPages() {
 		String number;
@@ -198,7 +228,7 @@ public class VacationTrackerPage extends PageObject {
 		}
 		return pages;
 	}
-
+*/
 	public void goToNextPage() {
 		nextButton.click();
 
@@ -260,9 +290,12 @@ public class VacationTrackerPage extends PageObject {
 	}
 
 	public void verifyDeparment(List<EmployeeVacationModel> ListElements, String type) {
-
+		
 		for (EmployeeVacationModel department : ListElements) {
-			Assert.assertTrue("The row does not contains the expected type", department.getDepartment().contains(type));
+			
+				Assert.assertTrue("The row does not contains the expected type", department.getDepartment().contains(type));
+
+			
 		}
 	}
 
@@ -295,13 +328,19 @@ public class VacationTrackerPage extends PageObject {
 		}
 		return result;
 	}
+	
+	public void getNumberOfRows() {
+		numberOfPageDropDown.click();
+		
+	}
+
 
 	public void verifyStautusColumn(List<EmployeeVacationModel> ListElements) {
 		// EmployeeVacationModel model = new EmployeeVacationModel();
 
 		// List<String> officialList = Arrays.asList("Rejected", "Approved",
 		// "Cancelled", "Withdrawn", "Pending");
-		List<String> officialList = (List<String>) ConstantClass.LISTA;
+		List<String> officialList = (List<String>) ConstantClass.OFFICIAL_STATUS_LIST;
 		// sau incearca cu status_list
 		for (String string : officialList) {
 			System.out.println("official list  " + string);
@@ -422,6 +461,7 @@ public class VacationTrackerPage extends PageObject {
 
 	}
 
+	
 }
 
 // }

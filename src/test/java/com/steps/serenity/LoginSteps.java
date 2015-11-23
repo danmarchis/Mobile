@@ -19,7 +19,7 @@ public class LoginSteps extends ScenarioSteps {
 
 	@Step
 	public void enters(String k1, String k2) {
-		dictionaryPage.add_screen_name(k1);
+		dictionaryPage.addScreenName(k1);
 		dictionaryPage.add_password(k2);
 
 	}
@@ -40,21 +40,19 @@ public class LoginSteps extends ScenarioSteps {
 		startLogin();
 	}
 	
-	public void login_as_PM(){
+	public void loginAsPM(){
 		enters(ConstantClass.PM_NAME,ConstantClass.PM_PW);
 		startLogin();
 	}
 	
 	@Step
-	public void login_as_DM(){
+	public void loginAsDM(){
 		enters(ConstantClass.DM_NAME,ConstantClass.DM_PW);
 		startLogin();
 	}
 	
 	@Step
-	public void login_as_tester(){
-
-	
+	public void loginAsTester(){
 		enters(ConstantClass.TESTER_NAME,ConstantClass.TESTER_PW);
 		startLogin();
 	}

@@ -48,7 +48,7 @@ public class AscendingOrderInColumns {
 	@Test
 	public void verifyIfStatusColumnIsInAscendingOrder() {
 		loginSteps.getHomePage();
-		loginSteps.login_as_PM();
+		loginSteps.loginAsPM();
 		loginSteps.access_track_tab();
 		
 		
@@ -62,11 +62,11 @@ public class AscendingOrderInColumns {
     	
 		selectFilters.showDropDownDepartaments();
 		selectFilters.checkAllInDepartamentsDropDown();
-		selectFilters.chooseDepartaments("Mobile");
+		selectFilters.chooseDepartaments(ConstantClass.MOBILE_DEPARTAMENT);
     	
 		selectFilters.clickApply();
-		
-		verifyColumnTypes.verifyIfStatusColumnIsInAscendingOrder("Status");
+		selectFilters.chooseNumeberOfRowsInPage(ConstantClass.THIRTY);
+		verifyColumnTypes.verifyIfColumnIsInAscendingOrder(ConstantClass.STATUS_COLUMN);
 
 	}
 

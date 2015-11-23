@@ -36,7 +36,7 @@ public class DescendingOrderInColumns {
 	@Test
 	public void verifyIfStatusColumnIsInDescendingOrder() {
 		loginSteps.getHomePage();
-		loginSteps.login_as_PM();
+		loginSteps.loginAsPM();
 		loginSteps.access_track_tab();
 
 		newDateSteps.selectStartDate_track(17, "Nov", 2015);

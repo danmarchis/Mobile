@@ -5,11 +5,11 @@ import net.thucydides.core.annotations.Issue;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.junit.annotations.UseTestDataFrom;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-
 
 import com.steps.serenity.TrackerSteps;
 import com.steps.serenity.VacationTrackerSelectFiltersSteps;
@@ -19,44 +19,39 @@ import constantPckg.ConstantClass;
 
 import com.pages.LoginPage;
 import com.steps.serenity.DatePickerActionsSteps;
+import com.steps.serenity.DatePickerSteps;
 import com.steps.serenity.LoginSteps;
-import com.steps.serenity.NewVacationRequestSteps;
 
 @RunWith(SerenityRunner.class)
-public class VerifyStusColumnTest {
-
-
+@UseTestDataFrom(separator=';',value="tools/page.csv")
+public class AscendingOrderInStatusColumn {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
-	
+
 	@Steps
 	public LoginSteps loginSteps;
-	
-	
-	
+
 	@Steps
 	public TrackerSteps newTrack;
-	
+
 	@Steps
-	public DatePickerActionsSteps newDateSteps;
-	
+	public DatePickerSteps newDateSteps;
+
 	@Steps
 	VacationTrackerSelectFiltersSteps selectFilters;
-	
-	@Steps
-	VerifyColumnTypesSteps  verifyColumnTypes;
-	
-	@Test
-	public void verify_If_NoStatus_Elements_Are_Allowed_In_Status_Column() {
 
+	@Steps
+	VerifyColumnTypesSteps verifyColumnTypes;
+
+	@Test
+	public void access_tracker_tab() {
 		loginSteps.getHomePage();
 		loginSteps.loginAsPM();
 		loginSteps.access_track_tab();
-
 		
 		
-		newDateSteps.selectStartDate_track(17, "Nov", 2015);	
-		newDateSteps.selectEndDate_track(31, "Dec", 2015);
+		newDateSteps.selectStartDate_track(ConstantClass.DATE_START);	
+		newDateSteps.selectEndDate_track(ConstantClass.DATE_FINAL);
 		
 		
 		selectFilters.showDropDownBuilding();
@@ -65,12 +60,12 @@ public class VerifyStusColumnTest {
     	
 		selectFilters.showDropDownDepartaments();
 		selectFilters.checkAllInDepartamentsDropDown();
-		selectFilters.chooseDepartaments(ConstantClass.MOBILE_DEPARTAMENT);
+		selectFilters.chooseDepartaments("Mobile");
     	
 		selectFilters.clickApply();
-		
-		verifyColumnTypes.verifyIfNoStatusElementsAreAllowedInStatusColumn();
-    	
+		selectFilters.chooseNumeberOfRowsInPage("5");
+		//verifyColumnTypes.verifyIfStatusColumnIsInAscendingOrder("Status");
+
 	}
-	
+
 }

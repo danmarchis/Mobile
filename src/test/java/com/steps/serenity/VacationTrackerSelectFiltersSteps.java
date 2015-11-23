@@ -38,4 +38,10 @@ public class VacationTrackerSelectFiltersSteps {
 	public void clickApply() {
 		tracker.applyButtonClick();
 	}
+
+	@Step
+	public void chooseNumeberOfRowsInPage(String number) {
+		tracker.setNumberOfRows(number);
+		
+	}
 }

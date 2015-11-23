@@ -46,7 +46,7 @@ public class NewVacationRequestTest {
     public void Holiday_request() 
     {
     	logInSteps.getHomePage();
-    	logInSteps.login_as_tester();
+    	logInSteps.loginAsTester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(13, "Apr", 2018);
     	newVacationRequestSteps.selectEndDate(13, "Apr", 2018);
@@ -61,11 +61,11 @@ public class NewVacationRequestTest {
         myrequest.click_Pending();
         myrequest.click_Apply();
         myrequest.showEmployeeIfExistStartDate("13/04/2018");
-        signout.sign_out();
+        signout.signOut();
     
     }
 
-   
+   /*
     @Test
     public void Vacation_without_payment_request() 
     {
@@ -258,6 +258,6 @@ public class NewVacationRequestTest {
 
     
     
-
+*/
 } 
 

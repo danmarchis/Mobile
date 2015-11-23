@@ -29,12 +29,12 @@ public class VacationReportTest {
 	public void approve_all_vacations_inbox() {
 		loginSteps.getHomePage();
 		loginSteps.startLogin();
-		loginSteps.login_as_DM();
-		vacationsReportSteps.click_vacations_report();
+		loginSteps.loginAsDM();
+		vacationsReportSteps.clickVacationsReport();
 		vacationsReportSteps.selectMonth("November");
 		vacationsReportSteps.selectYear("2014");
-		vacationsReportSteps.select_pending();
-		vacationsReportSteps.select_export();
+		vacationsReportSteps.selectPending();
+		vacationsReportSteps.selectExport();
 		
 	}	
 

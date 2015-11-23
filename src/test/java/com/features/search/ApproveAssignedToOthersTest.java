@@ -4,34 +4,34 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
+import com.steps.serenity.ApproveAllVacationsAssignedToOthersInboxSteps;
 import com.steps.serenity.ApproveAllVacationsinInboxSteps;
 import com.steps.serenity.LoginSteps;
-import com.steps.serenity.RejectAllVacationsInInboxSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
-public class RejectAllVacationsinInbox {
+public class ApproveAssignedToOthersTest {
 	
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 	
 	@Steps
-	public RejectAllVacationsInInboxSteps rejectAllVacationsinInbox;
+	public ApproveAllVacationsAssignedToOthersInboxSteps approveAllAssignedToOthers;
 	
 	@Steps
 	public LoginSteps loginSteps;
 
 	@Test
-	public void approve_all_vacations_inbox() {
+	public void approveAllVacationsInbox() {
 		loginSteps.getHomePage();
 		loginSteps.startLogin();
-		loginSteps.login_as_DM();
-		rejectAllVacationsinInbox.click_inbox_page();
-		rejectAllVacationsinInbox.tick_all_vacations();
-		rejectAllVacationsinInbox.approve_all_vacations();
-		
-}
+		loginSteps.loginAsDM();
+		approveAllAssignedToOthers.clickInboxPage();
+		approveAllAssignedToOthers.clickAssignToOthers();
+		approveAllAssignedToOthers.tickAllVacations();
+		approveAllAssignedToOthers.approveAllVacations();	
+	}
 }
