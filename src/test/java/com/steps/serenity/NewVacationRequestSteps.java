@@ -105,4 +105,10 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
     public void verifyMessage(String message) {
     		newVacationRequestPage.verify_Message(message);
     }
+
+    @Step
+    public void select_WithDraw(){
+    	newVacationRequestPage.WithDrawnOption();
+    }
+
 }

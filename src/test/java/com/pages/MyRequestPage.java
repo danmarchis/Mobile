@@ -60,6 +60,10 @@ public class MyRequestPage extends PageObject {
 	private WebElement VacationStatusAllCheckBox;
 	
 	
+	@FindBy (id= "_evovacation_WAR_EvoVacationportlet_WITHDRAWNCheckbox")
+	private WebElement WithDrawnBox;
+	
+	
 	public void VacationStatusCheckAllBox (){
 		VacationStatusAllCheckBox.click();
 	}
@@ -98,6 +102,10 @@ public class MyRequestPage extends PageObject {
 
 	public void StartDate() {
 		StartDate.click();
+	}
+	
+	public void WithDrawn(){
+		WithDrawnBox.click();
 	}
 
 	public List<EmployeeVacationModel> grabEmployeeVacationsList() {
