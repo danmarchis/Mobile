@@ -20,11 +20,10 @@ import constantPckg.ConstantClass;
 import com.pages.LoginPage;
 import com.steps.serenity.DatePickerActionsSteps;
 import com.steps.serenity.LoginSteps;
-import com.steps.serenity.NewVacationRequestSteps;
+
 
 @RunWith(SerenityRunner.class)
-public class VerifyCorrectTypesInColumns {
-
+public class AscendingOrderInColumns {
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 	
@@ -32,19 +31,22 @@ public class VerifyCorrectTypesInColumns {
 	public LoginSteps loginSteps;
 	
 	@Steps
-	public DatePickerActionsSteps newDateSteps;
+	public TrackerSteps newTrack;
 	
 	@Steps
-	public TrackerSteps newTrack;
-
+	public DatePickerActionsSteps newDateSteps;
+	
 	@Steps
 	VacationTrackerSelectFiltersSteps selectFilters;
 	
 	@Steps
 	VerifyColumnTypesSteps verifyColumnTypes;
 	
+	
+	
+	
 	@Test
-	public void verify_if_the_application_display_correct_type_in_colums_from_vacation_tracker_page() {
+	public void verifyIfStatusColumnIsInAscendingOrder() {
 		loginSteps.getHomePage();
 		loginSteps.login_as_PM();
 		loginSteps.access_track_tab();
@@ -60,15 +62,13 @@ public class VerifyCorrectTypesInColumns {
     	
 		selectFilters.showDropDownDepartaments();
 		selectFilters.checkAllInDepartamentsDropDown();
-		selectFilters.chooseDepartaments(ConstantClass.MOBILE_DEPARTAMENT);
+		selectFilters.chooseDepartaments("Mobile");
     	
 		selectFilters.clickApply();
-    	
 		
-		//newTrack.showEmployeeVacationsList("Nobile");
-	//	newTrack.verifyIfApplicationDisplayCorrectTypes("Nobile");
-		verifyColumnTypes.verifyIfApplicationDisplayCorrectTypes("Nobile");
+		verifyColumnTypes.verifyIfStatusColumnIsInAscendingOrder("Status");
 
 	}
-	
+
+
 }

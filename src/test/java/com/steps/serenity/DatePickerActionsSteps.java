@@ -2,14 +2,14 @@ package com.steps.serenity;
 
 import com.pages.DatePickerPag;
 import com.pages.SiteMenuPage;
-import com.pages.TrackerPage;
+import com.pages.VacationTrackerPage;
 import com.pages.VacationRequestPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
 public class DatePickerActionsSteps  extends ScenarioSteps {
-	TrackerPage newDatePicker;
+	VacationTrackerPage newDatePicker;
 	SiteMenuPage newSiteMenu;
 	DatePickerPag datePickerPage;
 

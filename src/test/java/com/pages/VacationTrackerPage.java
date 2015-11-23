@@ -18,12 +18,11 @@ import net.thucydides.core.pages.PageObject;
 import tools.EmployeeVacationModel;
 
 @DefaultUrl(ConstantClass.BASE_URL)
-public class TrackerPage extends PageObject {
-	//a[href*='orderByCol=status&_evovacation_WA'
+public class VacationTrackerPage extends PageObject {
+	// a[href*='orderByCol=status&_evovacation_WA'
 	@FindBy(css = "a[href*='orderByCol=employeName']")
 	private WebElementFacade employeeName;
-	
-	
+
 	@FindBy(css = "a[href*='orderByCol=status&_evovacation_WA']")
 	private WebElementFacade statusColumn;
 	// datePicker
@@ -159,6 +158,18 @@ public class TrackerPage extends PageObject {
 		}
 	}
 
+	public void selectColumn(String type) {
+		if (type == "Status") {
+			clickOnStatusColumnHeader();
+			waitABit(500);
+		}
+		if (type == "Employee name") {
+			clickEmployeeNameColumn();
+			waitABit(500);
+		}
+
+	}
+
 	public void verifyThatTypeIsCorrectInDepartmentColumn(String type) {
 		List<WebElement> rows = getDriver().findElements(By.cssSelector("table tbody tr td.col-department"));
 		boolean found = true;
@@ -286,10 +297,12 @@ public class TrackerPage extends PageObject {
 	}
 
 	public void verifyStautusColumn(List<EmployeeVacationModel> ListElements) {
-		EmployeeVacationModel model = new EmployeeVacationModel();
+		// EmployeeVacationModel model = new EmployeeVacationModel();
 
-		List<String> officialList = Arrays.asList("Rejected", "Approved", "Cancelled", "Withdrawn", "Pending");
-
+		// List<String> officialList = Arrays.asList("Rejected", "Approved",
+		// "Cancelled", "Withdrawn", "Pending");
+		List<String> officialList = (List<String>) ConstantClass.LISTA;
+		// sau incearca cu status_list
 		for (String string : officialList) {
 			System.out.println("official list  " + string);
 		}
@@ -303,12 +316,9 @@ public class TrackerPage extends PageObject {
 			// Assert.assertTrue("The row does not contains the expected type",
 			// department.getDepartment().contains(type));
 		}
-		
-		
+
 		List<String> listBeforeNoDuplicate = new ArrayList<String>(new LinkedHashSet<String>(listFromTable));
 
-		
-		
 		for (String string : listBeforeNoDuplicate) {
 			System.out.println("Verify if no duplicate " + string);
 		}
@@ -318,18 +328,19 @@ public class TrackerPage extends PageObject {
 		} else {
 			System.out.println("lists are not equal");
 		}
-		
+
 		boolean noElement = false;
 		// List<String> uncommon = new ArrayList<String> ();
 		for (String s : listBeforeNoDuplicate) {
 			if (!officialList.contains(s)) {
-				Assert.assertTrue(s + "was found but should not fgfgfgffg !!!", false);
+				Assert.assertTrue(s + " :was found but should not appear in status column !!!", false);
 			}
 
 		}
 		for (String s : officialList) {
 			// if (!listBeforeNoDuplicate.contains(s)) uncommon.add(s);
-			Assert.assertTrue(s + "was found but should not !!!", !listBeforeNoDuplicate.contains(s));
+			Assert.assertTrue(s + " :was found but should not appear in status column !!!",
+					!listBeforeNoDuplicate.contains(s));
 		}
 
 		System.out.println("   ");
@@ -347,8 +358,68 @@ public class TrackerPage extends PageObject {
 
 	public void clickOnStatusColumnHeader() {
 		statusColumn.click();
+		waitABit(500);
 		// TODO Auto-generated method stub
-		
+
+	}
+
+	public void verifyStautusColumnIsInAscendingOrder(List<EmployeeVacationModel> employeeList, String expectedString) {
+		// List<EmployeeVacationModel> resultList = result;
+
+		List<String> firstList = new ArrayList<String>();
+		List<String> secondList = new ArrayList<String>();
+
+		if (expectedString == "Status") {
+			for (EmployeeVacationModel employeeNow : employeeList) {
+				String stat = employeeNow.getStatus();
+				firstList.add(stat);
+				secondList.add(stat);
+			}
+		}
+		if (expectedString == "Employee name") {
+			for (EmployeeVacationModel employeeNow : employeeList) {
+				String stat = employeeNow.getEmployeeName();
+				firstList.add(stat);
+				secondList.add(stat);
+			}
+		}
+		Collections.sort(secondList);
+
+		boolean notEqual = false;
+		if (!secondList.equals(firstList)) {
+			Assert.assertTrue("Status colums is not sorted in ascending order", notEqual);
+		}
+
+	}
+
+	public void verifyStautusColumnIsInDescendingOrder(List<EmployeeVacationModel> employeeList,
+			String expectedString) {
+		List<String> firstList = new ArrayList<String>();
+		List<String> secondList = new ArrayList<String>();
+		// EmployeeVacationModel column =column22;
+		if (expectedString == "Status") {
+			for (EmployeeVacationModel employeeNow : employeeList) {
+				String stat = employeeNow.getStatus();
+				firstList.add(stat);
+				secondList.add(stat);
+			}
+		}
+		if (expectedString == "Employee name") {
+			for (EmployeeVacationModel employeeNow : employeeList) {
+				String stat = employeeNow.getEmployeeName();
+				firstList.add(stat);
+				secondList.add(stat);
+			}
+		}
+
+		Collections.sort(secondList);
+		Collections.reverse(secondList);
+
+		boolean notEqual = false;
+		if (!secondList.equals(firstList)) {
+			Assert.assertTrue("Status" + expectedString + "  is not sorted in descending order", notEqual);
+		}
+
 	}
 
 }

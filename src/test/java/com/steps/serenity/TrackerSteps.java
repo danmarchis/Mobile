@@ -2,7 +2,7 @@ package com.steps.serenity;
 
 import com.pages.LoginPage;
 import com.pages.SiteMenuPage;
-import com.pages.TrackerPage;
+import com.pages.VacationTrackerPage;
 
 import net.serenitybdd.core.annotations.findby.By;
 import net.thucydides.core.annotations.Step;
@@ -21,7 +21,7 @@ import org.openqa.selenium.WebElement;
 
 public class TrackerSteps extends ScenarioSteps {
 
-	TrackerPage tracker;
+	VacationTrackerPage tracker;
 	SiteMenuPage sitePage;
 
 	@Step
@@ -158,9 +158,11 @@ public class TrackerSteps extends ScenarioSteps {
 		
 	}
 
-
+/*
 	public void verifyIfStatusColumnIsInAscendingOrder() {
 		tracker.clickOnStatusColumnHeader();
-		
+		List<EmployeeVacationModel> result = grabVacationsList();
+		tracker.verifyStautusColumnIsInAscendingOrder(result) ;
 	}
+	*/
 }

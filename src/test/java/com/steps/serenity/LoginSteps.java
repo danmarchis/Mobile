@@ -2,7 +2,7 @@ package com.steps.serenity;
 
 import com.pages.LoginPage;
 import com.pages.SiteMenuPage;
-import com.pages.TrackerPage;
+import com.pages.VacationTrackerPage;
 
 import constantPckg.ConstantClass;
 import net.thucydides.core.annotations.Step;
@@ -15,7 +15,7 @@ import static org.hamcrest.Matchers.hasItem;
 public class LoginSteps extends ScenarioSteps {
 	LoginPage dictionaryPage;
 	SiteMenuPage  sitePage;
-	TrackerPage  trkPage;
+	VacationTrackerPage  trkPage;
 
 	@Step
 	public void enters(String k1, String k2) {

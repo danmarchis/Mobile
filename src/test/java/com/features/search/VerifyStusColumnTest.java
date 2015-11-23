@@ -12,6 +12,11 @@ import org.openqa.selenium.WebDriver;
 
 
 import com.steps.serenity.TrackerSteps;
+import com.steps.serenity.VacationTrackerSelectFiltersSteps;
+import com.steps.serenity.VerifyColumnTypesSteps;
+
+import constantPckg.ConstantClass;
+
 import com.pages.LoginPage;
 import com.steps.serenity.DatePickerActionsSteps;
 import com.steps.serenity.LoginSteps;
@@ -20,11 +25,12 @@ import com.steps.serenity.NewVacationRequestSteps;
 @RunWith(SerenityRunner.class)
 public class VerifyStusColumnTest {
 
+
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 	
 	@Steps
-	public LoginSteps endUser;
+	public LoginSteps loginSteps;
 	
 	
 	
@@ -34,30 +40,34 @@ public class VerifyStusColumnTest {
 	@Steps
 	public DatePickerActionsSteps newDateSteps;
 	
+	@Steps
+	VacationTrackerSelectFiltersSteps selectFilters;
+	
+	@Steps
+	VerifyColumnTypesSteps  verifyColumnTypes;
+	
 	@Test
 	public void verify_If_NoStatus_Elements_Are_Allowed_In_Status_Column() {
-		endUser.getHomePage();
-		endUser.login_as_PM();
-		endUser.access_track_tab();
+		loginSteps.getHomePage();
+		loginSteps.login_as_PM();
+		loginSteps.access_track_tab();
 		
 		
-		newDateSteps.selectStartDate_track(17, "Nov", 2015);
-		
+		newDateSteps.selectStartDate_track(17, "Nov", 2015);	
 		newDateSteps.selectEndDate_track(31, "Dec", 2015);
-    	newTrack.showDropDownBuilding();
-    	newTrack.showDropDownAll();
-    
-    	//newTrack.chooseBuildings("Not");
-    	newTrack.showDropDownBuilding();
-    	
-    	newTrack.showDropDownDepartaments();
-    	newTrack.showDepartamentsDropDownAll();
-    	
-    	newTrack.chooseDepartaments("Mobile");
-    	
-    	newTrack.clickApply();
 		
-    	newTrack.verifyIfNoStatusElementsAreAllowedInStatusColumn();
+		
+		selectFilters.showDropDownBuilding();
+		selectFilters.showDropDownAll();
+		selectFilters.showDropDownBuilding();
+    	
+		selectFilters.showDropDownDepartaments();
+		selectFilters.checkAllInDepartamentsDropDown();
+		selectFilters.chooseDepartaments(ConstantClass.MOBILE_DEPARTAMENT);
+    	
+		selectFilters.clickApply();
+		
+		verifyColumnTypes.verifyIfNoStatusElementsAreAllowedInStatusColumn();
     	
 	}
 	

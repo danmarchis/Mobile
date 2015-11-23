@@ -1,74 +1,58 @@
 package com.features.search;
 
-import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Issue;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Pending;
-import net.thucydides.core.annotations.Steps;
-
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-
+import com.steps.serenity.DatePickerActionsSteps;
+import com.steps.serenity.LoginSteps;
 import com.steps.serenity.TrackerSteps;
 import com.steps.serenity.VacationTrackerSelectFiltersSteps;
 import com.steps.serenity.VerifyColumnTypesSteps;
 
 import constantPckg.ConstantClass;
+import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Steps;
 
-import com.pages.LoginPage;
-import com.steps.serenity.DatePickerActionsSteps;
-import com.steps.serenity.LoginSteps;
-import com.steps.serenity.NewVacationRequestSteps;
-
-@RunWith(SerenityRunner.class)
-public class VerifyCorrectTypesInColumns {
+public class DescendingOrderInColumns {
 
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
-	
+
 	@Steps
 	public LoginSteps loginSteps;
-	
-	@Steps
-	public DatePickerActionsSteps newDateSteps;
-	
+
 	@Steps
 	public TrackerSteps newTrack;
 
 	@Steps
+	public DatePickerActionsSteps newDateSteps;
+
+	@Steps
 	VacationTrackerSelectFiltersSteps selectFilters;
-	
+
 	@Steps
 	VerifyColumnTypesSteps verifyColumnTypes;
-	
+
 	@Test
-	public void verify_if_the_application_display_correct_type_in_colums_from_vacation_tracker_page() {
+	public void verifyIfStatusColumnIsInDescendingOrder() {
 		loginSteps.getHomePage();
 		loginSteps.login_as_PM();
 		loginSteps.access_track_tab();
-		
-		
-		newDateSteps.selectStartDate_track(17, "Nov", 2015);	
+
+		newDateSteps.selectStartDate_track(17, "Nov", 2015);
 		newDateSteps.selectEndDate_track(31, "Dec", 2015);
-		
-		
+
 		selectFilters.showDropDownBuilding();
 		selectFilters.showDropDownAll();
 		selectFilters.showDropDownBuilding();
-    	
+
 		selectFilters.showDropDownDepartaments();
 		selectFilters.checkAllInDepartamentsDropDown();
 		selectFilters.chooseDepartaments(ConstantClass.MOBILE_DEPARTAMENT);
-    	
+		// ok
 		selectFilters.clickApply();
-    	
-		
-		//newTrack.showEmployeeVacationsList("Nobile");
-	//	newTrack.verifyIfApplicationDisplayCorrectTypes("Nobile");
-		verifyColumnTypes.verifyIfApplicationDisplayCorrectTypes("Nobile");
+
+		verifyColumnTypes.verifyIfStatusColumnIsInDescendingOrder("Employee name");
 
 	}
-	
 }
