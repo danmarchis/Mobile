@@ -23,10 +23,25 @@ public class ViewVacationsSteps extends ScenarioSteps {
 	public void tickPendingStatus() {
 		viewVacations.checkPending();
 	}
+	
+	@Step
+	public void checkOneToFive() {
+		viewVacations.checkOneFive();
+	}
 
 	@Step
 	public void clickApplyButton() {
 		viewVacations.clickApply();
+	}
+	
+	@Step
+	public void arrangeByStartDayHeaderFilter() {
+		viewVacations.clickStartDayFilter();
+	}
+	
+	@Step
+	public void clickNextPage() {
+		viewVacations.nextPage();
 	}
 
 	@Step

@@ -66,6 +66,10 @@ public class VacationRequestPage extends PageObject {
 	
 	@FindBy(css = ".portlet-msg-success")
 	private WebElementFacade shownMessage;
+	
+	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_withdrawnVacationRequest")
+	private WebElementFacade WithDraw;
+	
 
 
 	public void selectSpecialVacationType_Funeral() {
@@ -89,6 +93,10 @@ public class VacationRequestPage extends PageObject {
 	
 	public void verify_Message(String message) {
 		Assert.assertTrue("not the expected message", shownMessage.getText().contains(message));
+	}
+	
+	public void WithDrawnOption(){
+		WithDraw.click();
 	}
 	
 	
