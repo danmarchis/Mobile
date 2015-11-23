@@ -35,7 +35,7 @@ public class VerifyCorrectTypesInColumns {
 	@Test
 	public void verify_if_the_application_display_correct_type_in_colums_from_vacation_tracker_page() {
 		endUser.getHomePage();
-		endUser.login_as_PM();
+		endUser.loginAsPM();
 		endUser.access_track_tab();
 		newDateSteps.selectStartDate_track(17, "Nov", 2015);
 		

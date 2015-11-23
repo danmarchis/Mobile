@@ -1,15 +1,15 @@
 package com.steps.serenity;
 
-import com.pages.ImpersonatePage;
+import com.pages.ImpersonateUserPage;
 import com.pages.UserListPage;
 
 import constantPckg.ConstantClass;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-public class ImpersonateSteps extends ScenarioSteps {
+public class ImpersonateUserSteps extends ScenarioSteps {
 
-	ImpersonatePage impersonatePage;
+	ImpersonateUserPage impersonatePage;
 	UserListPage userListPage;
 
 	@Step
@@ -34,7 +34,7 @@ public class ImpersonateSteps extends ScenarioSteps {
 
 	@Step
 	public void enter_username(String keyword) {
-		impersonatePage.enter_username(keyword);
+		impersonatePage.enterUsername(keyword);
 	}
 
 	@Step

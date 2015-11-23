@@ -32,7 +32,7 @@ public class Order_track_test {
 	@Test
 	public void verify_if_you_can_sort_a_column_by_clicking_on_a_specifiv_column_head() {
 		endUser.getHomePage();
-		endUser.login_as_PM();
+		endUser.loginAsPM();
 		endUser.access_track_tab();
 		trUser.sort_by_employee1();
 		trUser.clickStartDate();

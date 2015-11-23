@@ -1,12 +1,11 @@
 package com.steps.serenity;
 
-import com.pages.LoginPage;
 import com.pages.InboxPage;
+
 import net.thucydides.core.annotations.Step;
-import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.steps.ScenarioSteps;
 
-public class ApproveAllVacationsinInboxSteps extends ScenarioSteps {
+public class ApproveAllVacationsAssignedToOthersInboxSteps extends ScenarioSteps {
 	InboxPage inbox1;
 
 	
@@ -14,6 +13,11 @@ public class ApproveAllVacationsinInboxSteps extends ScenarioSteps {
 	@Step
 	public void clickInboxPage() {
 		inbox1.clickInbox12();
+	}
+	
+	@Step
+	public void clickAssignToOthers() {
+		inbox1.click_assigntoothers();
 	}
 	
 	@Step

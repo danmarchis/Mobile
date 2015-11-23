@@ -34,27 +34,27 @@ public class InboxPage extends PageObject {
     @FindBy(css="ul.nav-tabs li:nth-child(2)")
     private WebElementFacade assignedToOthers;
 
-    public void click_inbox12(){
-		 inbox.click();
-		
-    }
-    
-    public void tick_all(){
-		 tickAll.click();
-		
-   }
-    
-    public void approve_all(){
-		 approveButton.click();
-		
-  }
-
-    public void reject_all(){
-		 rejectButton.click();
-		
- }
-    public void click_assigntoothers(){
-    	assignedToOthers.click();
-		
- }
-}
+	    public void clickInbox12(){
+			 inbox.click();
+			
+	    }
+	    
+	    public void tickAll(){
+			 tickAll.click();
+			
+	   }
+	    
+	    public void approveAll(){
+			 approveButton.click();
+			
+	   }
+	
+	    public void rejectAll(){
+			 rejectButton.click();
+			
+	   }
+	    public void click_assigntoothers(){
+	    	assignedToOthers.click();
+			
+	 }
+	}

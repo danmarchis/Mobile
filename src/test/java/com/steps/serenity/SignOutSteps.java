@@ -17,7 +17,7 @@ public class SignOutSteps extends ScenarioSteps {
 	}
 
 	@Step
-	public void sign_out() {
+	public void signOut() {
 		sitePage.openAt(ConstantClass.ENV_URL + "/c/portal/logout");
 	}
 

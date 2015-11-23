@@ -61,7 +61,7 @@ public class NewVacationRequestTest {
         myrequest.click_Pending();
         myrequest.click_Apply();
         myrequest.showEmployeeIfExistStartDate("13/04/2018");
-        signout.sign_out();
+        signout.signOut();
     
     }
 

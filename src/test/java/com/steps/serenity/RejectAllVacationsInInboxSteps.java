@@ -11,18 +11,18 @@ public class RejectAllVacationsInInboxSteps extends ScenarioSteps {
 
 	
 	@Step
-	public void click_inbox_page() {
-		inbox2.click_inbox12();
+	public void clickInboxPage() {
+		inbox2.clickInbox12();
 	}
 	
 	@Step
-	public void tick_all_vacations() {
-		inbox2.tick_all();
+	public void tickAllVacations() {
+		inbox2.tickAll();
 	}
 	
 	@Step
-	public void approve_all_vacations() {
-		inbox2.reject_all();
+	public void approveAllVacations() {
+		inbox2.rejectAll();
 	}
      
 }

@@ -16,7 +16,7 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 
 @RunWith(SerenityRunner.class)
-public class ApproveAllVacationsinInbox {
+public class ApproveAllVacationsinInboxTest {
 	
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
@@ -34,10 +34,10 @@ public class ApproveAllVacationsinInbox {
 	public SignOutSteps signOutSteps;
 	
 	@Test
-	public void approve_all_vacations_inbox() {
+	public void approveAllVacationsInbox() {
 		loginSteps.getHomePage();
 		loginSteps.startLogin();
-		loginSteps.login_as_PM();
+		loginSteps.loginAsPM();
 		newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(19, "Nov", 2015);
     	newVacationRequestSteps.selectEndDate(19, "Nov", 2015);
@@ -49,13 +49,13 @@ public class ApproveAllVacationsinInbox {
     	newVacationRequestSteps.enter_CommentBox("Mama are mere");
     	newVacationRequestSteps.Save();
     	//signOutSteps.access_user_options();
-    	signOutSteps.sign_out();
+    	signOutSteps.signOut();
     	loginSteps.getHomePage();
 		loginSteps.startLogin();
-		loginSteps.login_as_DM();
-		approveAllVacationsinInboxSteps.click_inbox_page();
-		approveAllVacationsinInboxSteps.tick_all_vacations();
-		approveAllVacationsinInboxSteps.approve_all_vacations();
+		loginSteps.loginAsDM();
+		approveAllVacationsinInboxSteps.clickInboxPage();
+		approveAllVacationsinInboxSteps.tickAllVacations();
+		approveAllVacationsinInboxSteps.approveAllVacations();
 		
 }
 }

@@ -37,7 +37,7 @@ public class TrackSelectDatesTest {
 	@Test
 	public void verify_if_the_application_allowed_to_select_an_erlier_endDate_than_the_startDate() {
 		endUser.getHomePage();
-		endUser.login_as_PM();
+		endUser.loginAsPM();
 		endUser.access_track_tab();
 		newDatePickerSelectDate.selectStartDate_track(17, "Nov", 2015);
 		newDatePickerSelectDate.selectEndDate_track(26, "Nov", 2015);

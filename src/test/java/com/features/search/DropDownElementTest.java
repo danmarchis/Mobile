@@ -34,7 +34,7 @@ public class DropDownElementTest {
 	@Test
 	public void verify_if_the_drop_down_elements_are_visible() {
 		endUser.getHomePage();
-		endUser.login_as_PM();
+		endUser.loginAsPM();
 		endUser.access_track_tab();
 		//newTrack.selectStartDate_track(17, "Nov", 2015);
     	//newVacationRequestSteps.selectEndDate_track(26, "Nov", 2015);

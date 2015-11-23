@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import com.steps.serenity.LoginSteps;
 import com.steps.serenity.NewVacationRequestSteps;
 import com.steps.serenity.ApproveAllVacationsinInboxSteps;
-import com.steps.serenity.ImpersonateSteps;
+import com.steps.serenity.ImpersonateUserSteps;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
@@ -23,7 +23,7 @@ public class ImpersonateUserTest {
 	public LoginSteps loginSteps;
 	
 	@Steps
-	public ImpersonateSteps impersonateSteps;
+	public ImpersonateUserSteps impersonateSteps;
 	
 
 	@Steps
@@ -34,9 +34,9 @@ public class ImpersonateUserTest {
 	
 
 	@Test
-	public void approve_all_vacations_inbox() {
+	public void approveAllImpersonatedVacationsInbox() {
 		loginSteps.getHomePage();
-		loginSteps.login_as_DM();
+		loginSteps.loginAsDM();
 		loginSteps.navigateTo("http://172.22.4.88:9090/group/control_panel?doAsGroupId=10180&refererPlid=86301");
 		impersonateSteps.users_and_org();
 		impersonateSteps.name_field();;
@@ -51,10 +51,10 @@ public class ImpersonateUserTest {
 		newVacationRequestSteps.Save();
 		impersonateSteps.sign_out();
 		loginSteps.getHomePage();
-		loginSteps.login_as_DM();
-		approveAllVacationsinInboxSteps.click_inbox_page();
-		approveAllVacationsinInboxSteps.tick_all_vacations();
-		approveAllVacationsinInboxSteps.approve_all_vacations();
+		loginSteps.loginAsDM();
+		approveAllVacationsinInboxSteps.clickInboxPage();
+		approveAllVacationsinInboxSteps.tickAllVacations();
+		approveAllVacationsinInboxSteps.approveAllVacations();
 		
 	}
 }
