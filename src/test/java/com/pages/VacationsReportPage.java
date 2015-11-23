@@ -73,6 +73,4 @@ public class VacationsReportPage extends PageObject {
 	}
 	
 	
-	
-	
 }

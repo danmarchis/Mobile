@@ -31,7 +31,10 @@ public class ViewVacationsTest {
 		viewFilteredVacations.clickViewVacation();
 		viewFilteredVacations.tickHolidayType();
 		viewFilteredVacations.tickPendingStatus();
+		viewFilteredVacations.checkOneToFive();
 		viewFilteredVacations.clickApplyButton();	
+		viewFilteredVacations.arrangeByStartDayHeaderFilter();
+		viewFilteredVacations.clickNextPage();
 		viewFilteredVacations.checkRegistrationContent("Holiday");
 		viewFilteredVacations.checkRegistrationStatus("Pending");
 	}
