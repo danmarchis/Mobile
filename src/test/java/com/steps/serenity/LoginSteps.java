@@ -53,8 +53,6 @@ public class LoginSteps extends ScenarioSteps {
 	
 	@Step
 	public void loginAsTester(){
-
-	
 		enters(ConstantClass.TESTER_NAME,ConstantClass.TESTER_PW);
 		startLogin();
 	}

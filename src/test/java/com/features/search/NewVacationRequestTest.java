@@ -46,7 +46,7 @@ public class NewVacationRequestTest {
     public void Holiday_request() 
     {
     	logInSteps.getHomePage();
-    	logInSteps.login_as_tester();
+    	logInSteps.loginAsTester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(13, "Apr", 2018);
     	newVacationRequestSteps.selectEndDate(13, "Apr", 2018);

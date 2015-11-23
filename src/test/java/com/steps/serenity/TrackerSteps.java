@@ -122,6 +122,15 @@ public class TrackerSteps extends ScenarioSteps {
 	//	nextPageTrack();
 	}
 	
+	
+	@Step
+	public void verifyIfNoStatusElementsAreAllowedInStatusColumn(){
+	
+		List<EmployeeVacationModel> result = grabVacationsList();	
+		tracker.verifyStautusColumn(result) ;
+		
+	//	nextPageTrack();
+	}
 	/*
 	@Step
 	public void showIfElementsAreWellSorted(String type){
@@ -146,6 +155,12 @@ public class TrackerSteps extends ScenarioSteps {
 	public void selectNumberOfRowsInPage() {
 		// TODO Auto-generated method stub
 		tracker.clickOnDropDown();
+		
+	}
+
+
+	public void verifyIfStatusColumnIsInAscendingOrder() {
+		tracker.clickOnStatusColumnHeader();
 		
 	}
 }
