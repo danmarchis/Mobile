@@ -65,12 +65,12 @@ public class NewVacationRequestTest {
     
     }
 
-   /*
+   
     @Test
     public void Vacation_without_payment_request() 
     {
     	logInSteps.getHomePage();
-    	logInSteps.login_as_tester();
+    	logInSteps.loginAsTester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(3, "Apr", 2018);
     	newVacationRequestSteps.selectEndDate(3, "Apr", 2018);
@@ -87,7 +87,7 @@ public class NewVacationRequestTest {
         myrequest.click_Pending();
         myrequest.click_Apply();
         myrequest.showEmployeeIfExistStartDate("3/04/2018");
-        signout.sign_out();
+        signout.signOut();
     }
 
     
@@ -95,7 +95,7 @@ public class NewVacationRequestTest {
     public void SickLeave_request()
     {
     	logInSteps.getHomePage();
-    	logInSteps.login_as_tester();
+    	logInSteps.loginAsTester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(4, "Apr", 2018);
     	newVacationRequestSteps.selectEndDate(4, "Apr", 2018);
@@ -110,7 +110,7 @@ public class NewVacationRequestTest {
         myrequest.select_VacationStatusCheckAllBox();
         myrequest.click_Apply();
         myrequest.showEmployeeIfExistStartDate("4/04/2018");
-        signout.sign_out();
+        signout.signOut();
     	
     }
 
@@ -119,7 +119,7 @@ public class NewVacationRequestTest {
     public void Special_Vacation_Marriage_request()
     {
         logInSteps.getHomePage();
-    	logInSteps.login_as_tester();
+    	logInSteps.loginAsTester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(5, "Apr", 2018);
     	newVacationRequestSteps.selectEndDate(5, "Apr", 2018);
@@ -134,7 +134,7 @@ public class NewVacationRequestTest {
         myrequest.click_Pending();
         myrequest.click_Apply();
         myrequest.showEmployeeIfExistStartDate("5/04/2018");
-    	signout.sign_out();
+    	signout.signOut();
     }
 
 
@@ -142,7 +142,7 @@ public class NewVacationRequestTest {
     public void Special_Vacation_ChildBirth_request()
     {
         logInSteps.getHomePage();
-    	logInSteps.login_as_tester();
+    	logInSteps.loginAsTester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(6, "Apr", 2018);
     	newVacationRequestSteps.selectEndDate(6, "Apr", 2018);
@@ -158,14 +158,14 @@ public class NewVacationRequestTest {
         myrequest.click_Pending();
         myrequest.click_Apply();
         myrequest.showEmployeeIfExistStartDate("6/04/2018");
-    	signout.sign_out();
+    	signout.signOut();
     }
 
     @Test
     public void Special_Vacation_Funeral_request()
     {
         logInSteps.getHomePage();
-    	logInSteps.login_as_tester();
+    	logInSteps.loginAsTester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(9, "Apr", 2018);
     	newVacationRequestSteps.selectEndDate(9, "Apr", 2018);
@@ -181,7 +181,7 @@ public class NewVacationRequestTest {
         myrequest.click_Pending();
         myrequest.click_Apply();
         myrequest.showEmployeeIfExistStartDate("9/04/2018");
-    	signout.sign_out();
+    	signout.signOut();
     }
     
 
@@ -189,7 +189,7 @@ public class NewVacationRequestTest {
     public void Special_Vacation_Other_request()
     {
     	logInSteps.getHomePage();
-    	logInSteps.login_as_tester();
+    	logInSteps.loginAsTester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(10, "Apr", 2018);
     	newVacationRequestSteps.selectEndDate(10, "Apr", 2018);
@@ -205,7 +205,7 @@ public class NewVacationRequestTest {
         myrequest.click_Pending();
         myrequest.click_Apply();
         myrequest.showEmployeeIfExistStartDate("10/04/2018");
-    	signout.sign_out();
+    	signout.signOut();
     }
 
 
@@ -213,7 +213,7 @@ public class NewVacationRequestTest {
     public void MaternityLeave_Prenatal_Postnalat_request()
     {
         logInSteps.getHomePage();
-    	logInSteps.login_as_tester();
+    	logInSteps.loginAsTester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(11, "Apr", 2018);
     	newVacationRequestSteps.selectEndDate(11, "Apr", 2018);
@@ -228,14 +228,14 @@ public class NewVacationRequestTest {
         myrequest.click_Pending();
         myrequest.click_Apply();
         myrequest.showEmployeeIfExistStartDate("11/04/2018");
-    	signout.sign_out();
+    	signout.signOut();
     }
 
     @Test
     public void MaternityLeave_Concediu_Ingrijire_Copii_request()
     {
     	logInSteps.getHomePage();
-    	logInSteps.login_as_tester();
+    	logInSteps.loginAsTester();
     	newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
     	newVacationRequestSteps.selectStartDate(12, "Apr", 2018);
     	newVacationRequestSteps.selectEndDate(12, "Apr", 2018);
@@ -253,11 +253,11 @@ public class NewVacationRequestTest {
         myrequest.click_Pending();
         myrequest.click_Apply();
         myrequest.showEmployeeIfExistStartDate("12/04/2018");
-    	signout.sign_out();
+    	signout.signOut();
     }
 
     
     
-*/
+
 } 
 
