@@ -132,11 +132,15 @@ public class MyRequestPage extends PageObject {
 	public void verifyStartDate(List<EmployeeVacationModel> ListElements, String type) {
 
 		boolean isPresent = false;
+		System.out.println("Verification on list....");
+		System.out.println("Expected value: " + type);
 		
 		theFor:
 		for (EmployeeVacationModel startDate : ListElements) {
+			System.out.println("Actual Value: " + startDate.getStartDate());
 			isPresent = startDate.getStartDate().contains(type);
 			if(isPresent){
+				System.out.println("Found it: Expected: " + type + " Actual: " + startDate.getStartDate());
 				break theFor;
 			}
 		}
