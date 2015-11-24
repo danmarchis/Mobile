@@ -70,6 +70,9 @@ public class VacationRequestPage extends PageObject {
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_withdrawnVacationRequest")
 	private WebElementFacade WithDraw;
 	
+	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_editVacationRequest")
+	private WebElementFacade Edit;
+	
 
 
 	public void selectSpecialVacationType_Funeral() {
@@ -97,6 +100,10 @@ public class VacationRequestPage extends PageObject {
 	
 	public void WithDrawnOption(){
 		WithDraw.click();
+	}
+	
+	public void EditOption(){
+		Edit.click();
 	}
 	
 	
