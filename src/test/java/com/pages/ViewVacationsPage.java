@@ -55,13 +55,13 @@ public class ViewVacationsPage extends PageObject {
 		viewVacations.click();
 	}
 
-	public void checkHoliday() {
+	/*public void checkHoliday() {
 		holidayCheckBox.click();
 	}
-
-	public void checkVacationWithoutPayment() {
+*/
+	/*public void checkVacationWithoutPayment() {
 		vacationWithoutPaymentCheckBox.click();
-	}
+	}*/
 
 	public void checkPending() {
 		pendingCheckBox.click();
@@ -76,6 +76,15 @@ public class ViewVacationsPage extends PageObject {
 
 	}
 	
+	public void selectType(String type){
+		
+		if(type=="Holiday"){
+			holidayCheckBox.click();
+		}
+		if(type=="Vacation without payment"){
+			vacationWithoutPaymentCheckBox.click();
+		}
+	}
 	public void clickStartDayFilter() {
 		startDateHeaderFilter.click();
 

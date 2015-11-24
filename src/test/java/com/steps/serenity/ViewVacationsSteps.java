@@ -14,10 +14,10 @@ public class ViewVacationsSteps extends ScenarioSteps {
 		viewVacations.accesViewVacation();
 	}
 
-	@Step
+	/*@Step
 	public void tickHolidayType() {
 		viewVacations.checkHoliday();
-	}
+	}*/
 
 	@Step
 	public void tickPendingStatus() {
@@ -48,7 +48,12 @@ public class ViewVacationsSteps extends ScenarioSteps {
 	public void checkRegistrationContent(String message) {
 		viewVacations.verifyThatTypeIsCorrect(message);
 	}
-
+	
+	@Step
+	public void selectVacationType(String type) {
+		viewVacations.selectType(type);
+	}
+	
 	@Step
 	public void checkRegistrationStatus(String message) {
 		viewVacations.verifyThatStatusIsCorrect(message);

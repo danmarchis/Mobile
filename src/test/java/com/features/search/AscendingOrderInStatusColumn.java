@@ -19,7 +19,7 @@ import constantPckg.ConstantClass;
 
 import com.pages.LoginPage;
 import com.steps.serenity.DatePickerActionsSteps;
-import com.steps.serenity.DatePickerSteps;
+/*import com.steps.serenity.DatePickerSteps;*/
 import com.steps.serenity.LoginSteps;
 
 @RunWith(SerenityRunner.class)
@@ -34,16 +34,16 @@ public class AscendingOrderInStatusColumn {
 	@Steps
 	public TrackerSteps newTrack;
 
-	@Steps
+	/*@Steps
 	public DatePickerSteps newDateSteps;
-
+*/
 	@Steps
 	VacationTrackerSelectFiltersSteps selectFilters;
 
 	@Steps
 	VerifyColumnTypesSteps verifyColumnTypes;
 
-	@Test
+	/*@Test
 	public void access_tracker_tab() {
 		loginSteps.getHomePage();
 		loginSteps.loginAsPM();
@@ -63,9 +63,9 @@ public class AscendingOrderInStatusColumn {
 		selectFilters.chooseDepartaments("Mobile");
     	
 		selectFilters.clickApply();
-		selectFilters.chooseNumeberOfRowsInPage("5");
+		selectFilters.chooseNumeberOfRowsInPage("5");*/
 		//verifyColumnTypes.verifyIfStatusColumnIsInAscendingOrder("Status");
 
 	}
 
-}
+
