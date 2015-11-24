@@ -1,5 +1,6 @@
 package com.steps.serenity;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,5 +60,10 @@ public class VerifyColumnTypesSteps {
 		List<EmployeeVacationModel> result = grabVacationsList();
 		vacationTracker.verifyStautusColumnIsInDescendingOrder(result,type);
 		
+	}
+
+	public void verifyIfApplicationDisplayCorrectStartDate(String startDate) throws ParseException {
+		List<EmployeeVacationModel> result = grabVacationsList();
+		vacationTracker.verifyStartDate(result,startDate);
 	}
 }

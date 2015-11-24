@@ -1,8 +1,11 @@
 package com.pages;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.List;
 
@@ -36,8 +39,7 @@ public class VacationTrackerPage extends PageObject {
 	// Page list container
 	@FindBy(css = "#_evovacation_WAR_EvoVacationportlet_vacationTrackerTable")
 	private WebElement vacationContainer;
-	
-	
+
 	@FindBy(id = "_evovacation_WAR_EvoVacationportlet_evozonVacationsSearchContainerPageIteratorBottom_itemsPerPage")
 	private WebElementFacade numberOfPageDropDown;
 	// end
@@ -70,7 +72,7 @@ public class VacationTrackerPage extends PageObject {
 
 	@FindBy(css = "select.aui-field-input-menu ")
 	private WebElementFacade rowsNumber;
-	
+
 	@FindBy(css = "#buildings div.mutliSelect ul")
 	private WebElementFacade buildingContainer;
 
@@ -164,11 +166,10 @@ public class VacationTrackerPage extends PageObject {
 		}
 	}
 
-	
-	public void setNumberOfRows(String numberOfRows){
+	public void setNumberOfRows(String numberOfRows) {
 		// departamentscheckAll.click();
 		numberOfPageDropDown.click();
-		//waitABit(500);
+		// waitABit(500);
 		List<WebElement> numberOfRowsList = rowsNumber.findElements(By.cssSelector("option"));
 		System.out.println("lista");
 		for (WebElement rowsElement : numberOfRowsList) {
@@ -182,10 +183,10 @@ public class VacationTrackerPage extends PageObject {
 			// departmentElement.findElement(By.cssSelector("input")).click();
 			// System.out.println(" aici = " + departmentElement.getText());
 			// break;
-			
-			
+
 		}
 	}
+
 	public void selectColumn(String type) {
 		if (type == "Status") {
 			clickOnStatusColumnHeader();
@@ -214,21 +215,17 @@ public class VacationTrackerPage extends PageObject {
 		}
 
 	}
-	
+
 	/*
-
-	public int getNumberOfPages() {
-		String number;
-		int pages = 0;
-		List<WebElement> rows = getDriver().findElements(By.cssSelector(".aui-paginator-total"));
-		for (WebElement row : rows) {
-			number = row.getText().toString().split("of ")[1].replace(')', ' ').split(" ")[0];
-			pages = Integer.parseInt(number);
-
-		}
-		return pages;
-	}
-*/
+	 * 
+	 * public int getNumberOfPages() { String number; int pages = 0;
+	 * List<WebElement> rows =
+	 * getDriver().findElements(By.cssSelector(".aui-paginator-total")); for
+	 * (WebElement row : rows) { number = row.getText().toString().split("of "
+	 * )[1].replace(')', ' ').split(" ")[0]; pages = Integer.parseInt(number);
+	 * 
+	 * } return pages; }
+	 */
 	public void goToNextPage() {
 		nextButton.click();
 
@@ -261,9 +258,11 @@ public class VacationTrackerPage extends PageObject {
 
 		List<WebElement> entryList = resultListContainer
 				.findElements(By.cssSelector("tr.results-row:not(.lfr-template)"));
-
+		int i = 1;
 		for (WebElement webElement : entryList) {
-			System.out.println("Element: " + webElement.getText());
+
+			System.out.println("Element : " + i++ + webElement.getText());
+
 			EmployeeVacationModel entryNow = new EmployeeVacationModel();
 
 			String name = webElement.findElement(By.cssSelector("td.col-employee-name")).getText();
@@ -290,12 +289,11 @@ public class VacationTrackerPage extends PageObject {
 	}
 
 	public void verifyDeparment(List<EmployeeVacationModel> ListElements, String type) {
-		
-		for (EmployeeVacationModel department : ListElements) {
-			
-				Assert.assertTrue("The row does not contains the expected type", department.getDepartment().contains(type));
 
-			
+		for (EmployeeVacationModel department : ListElements) {
+
+			Assert.assertTrue("The row does not contains the expected type", department.getDepartment().contains(type));
+
 		}
 	}
 
@@ -304,10 +302,6 @@ public class VacationTrackerPage extends PageObject {
 			nextButton.click();
 		}
 		//
-
-	}
-
-	public void clickOnDropDown() {
 
 	}
 
@@ -328,12 +322,11 @@ public class VacationTrackerPage extends PageObject {
 		}
 		return result;
 	}
-	
+
 	public void getNumberOfRows() {
 		numberOfPageDropDown.click();
-		
-	}
 
+	}
 
 	public void verifyStautusColumn(List<EmployeeVacationModel> ListElements) {
 		// EmployeeVacationModel model = new EmployeeVacationModel();
@@ -461,7 +454,46 @@ public class VacationTrackerPage extends PageObject {
 
 	}
 
-	
+	public void verifyStartDate(List<EmployeeVacationModel> results, String startDate2) throws ParseException {
+
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		String dateInString = startDate2;
+
+		java.util.Date date1 = formatter.parse(dateInString);
+
+		List<String> startDateList = new ArrayList<String>();
+
+		for (EmployeeVacationModel startDateColumn : results) {
+
+			String statDate = startDateColumn.getStartDate(); // java.util.Date
+			startDateList.add(statDate);
+
+		}
+
+		String minStartDate = Collections.min(startDateList);
+		System.out.println(minStartDate);
+		java.util.Date date2 = formatter.parse(minStartDate);
+
+		System.out.println("data1   " + date1);
+		System.out.println("Data2   " + date2);
+
+		boolean before = false;
+		if (date1.compareTo(date2) < 0) {
+			System.out.println("Date1 is before Date2");
+
+			// System.out.println(date);
+			// System.out.println(formatter.format(date));
+			Assert.assertTrue("In Start Date Column there are a date that is earlier than selected start Date", before);
+
+		} else {
+			System.out.println("ok");
+		}
+
+	}
+
+	public void verifyIfApplicationDisplayCorrectNumberOfRows(String rowsNumber2) {
+
+	}
 }
 
 // }
