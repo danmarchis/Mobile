@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedHashSet;
@@ -180,9 +181,6 @@ public class VacationTrackerPage extends PageObject {
 				System.out.println(rowsElement.getText().contains(numberOfRows));
 				break;
 			}
-			// departmentElement.findElement(By.cssSelector("input")).click();
-			// System.out.println(" aici = " + departmentElement.getText());
-			// break;
 
 		}
 	}
@@ -317,6 +315,19 @@ public class VacationTrackerPage extends PageObject {
 		if (nextButtonList.size() > 0) {
 			if (nextButtonList.get(0).getTagName().contentEquals("a")) {
 				nextButtonList.get(0).click();
+				result = true;
+			}
+		}
+		return result;
+	}
+
+	public boolean isNext() {
+		boolean result = false;
+		element(vacationContainer).waitUntilVisible();
+		List<WebElement> nextButtonList = vacationContainer.findElements(By.cssSelector(".aui-paginator-next-link"));
+		if (nextButtonList.size() > 0) {
+			if (nextButtonList.get(0).getTagName().contentEquals("a")) {
+				// nextButtonList.get(0).click();
 				result = true;
 			}
 		}
@@ -492,8 +503,58 @@ public class VacationTrackerPage extends PageObject {
 	}
 
 	public void verifyIfApplicationDisplayCorrectNumberOfRows(String rowsNumber2) {
+		do {
+			verifyNumberOfRowsInPage();
+		} while (isNextPresent());
 
 	}
+
+	public void verifyNumberOfRowsInPage() {
+		element(resultListContainer).waitUntilVisible();
+
+		List<EmployeeVacationModel> resultList = new ArrayList<EmployeeVacationModel>();
+
+		List<WebElement> entryList = resultListContainer
+				.findElements(By.cssSelector("tr.results-row:not(.lfr-template)"));
+		int i = 1;
+		for (WebElement webElement : entryList) {
+
+			System.out.println("Element : " + i++ + webElement.getText());
+
+			EmployeeVacationModel entryNow = new EmployeeVacationModel();
+
+			String name = webElement.findElement(By.cssSelector("td.col-employee-name")).getText();
+			String startDate = webElement.findElement(By.cssSelector("td[class*='start.date']")).getText();
+			String endDate = webElement.findElement(By.cssSelector("td[class*='end.date']")).getText();
+			String building = webElement.findElement(By.cssSelector("td.col-building")).getText();
+			String department = webElement.findElement(By.cssSelector("td.col-department")).getText();
+			String type = webElement.findElement(By.cssSelector("td[class*='type']")).getText();
+			String status = webElement.findElement(By.cssSelector("td[class*='status']")).getText();
+
+			entryNow.setEmployeeName(name);
+			entryNow.setStartDate(startDate);
+			entryNow.setEndDate(endDate);
+			entryNow.setBuilding(building);
+			entryNow.setDepartment(department);
+			entryNow.setType(type);
+			entryNow.setStatus(status);
+
+			resultList.add(entryNow);
+			/*
+			 * if(isNext()){ if(i<=5){ continue; }
+			 */
+			if (!isNext()) {
+				if (i > 5) {
+					Assert.assertTrue("There are more number of rows in page ", false);
+					break;
+				} else {
+					System.out.println("tutul e bine");
+					break;
+				}
+			}
+		}
+	}
+
 }
 
 // }

@@ -42,6 +42,8 @@ public class VacationTrackerSelectFiltersSteps {
 	@Step
 	public void chooseNumeberOfRowsInPage(String number) {
 		tracker.setNumberOfRows(number);
+		tracker.verifyIfApplicationDisplayCorrectNumberOfRows(number);
+		
 		
 	}
 

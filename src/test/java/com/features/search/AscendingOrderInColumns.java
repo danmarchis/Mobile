@@ -65,7 +65,7 @@ public class AscendingOrderInColumns {
 		selectFilters.chooseDepartaments(ConstantClass.MOBILE_DEPARTAMENT);
     	
 		selectFilters.clickApply();
-		selectFilters.chooseNumeberOfRowsInPage(ConstantClass.FIVE);
+	//	selectFilters.chooseNumeberOfRowsInPage(ConstantClass.FIVE);
 		verifyColumnTypes.verifyIfColumnIsInAscendingOrder(ConstantClass.STATUS_COLUMN);
 
 	}

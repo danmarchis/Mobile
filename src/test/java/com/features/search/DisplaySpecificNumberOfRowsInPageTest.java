@@ -27,9 +27,9 @@ import com.steps.serenity.LoginSteps;
 import com.steps.serenity.NewVacationRequestSteps;
 import com.steps.serenity.SignOutSteps;
 
-@RunWith(SerenityParameterizedRunner.class)
+@RunWith(SerenityRunner.class)
 
-@UseTestDataFrom(separator=';',value="tools/page.csv")
+
 public class DisplaySpecificNumberOfRowsInPageTest {
 
 	@Managed(uniqueSession = true)
@@ -82,7 +82,7 @@ public class DisplaySpecificNumberOfRowsInPageTest {
 	//	verifyColumnTypes.verifyIfApplicationDisplayCorrectNumberOfRows("10/12/2015");
 		//signout.signOut();
 		selectFilters.chooseNumeberOfRowsInPage(ConstantClass.FIVE);
-		//selectFilters.chooseNumeberOfRowsInPage1(ConstantClass.THIRTY);
+	//	selectFilters.chooseNumeberOfRowsInPage1(ConstantClass.FIVE);
 	}
 	
 }
