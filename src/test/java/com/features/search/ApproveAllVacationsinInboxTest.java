@@ -39,8 +39,8 @@ public class ApproveAllVacationsinInboxTest {
 		loginSteps.startLogin();
 		loginSteps.loginAsPM();
 		newVacationRequestSteps.click_NewVacationRequestFromTheLeftMenu();
-    	newVacationRequestSteps.selectStartDate(19, "Nov", 2015);
-    	newVacationRequestSteps.selectEndDate(19, "Nov", 2015);
+    	newVacationRequestSteps.selectStartDate(18, "Dec", 2015);
+    	newVacationRequestSteps.selectEndDate(18, "Dec", 2015);
     	newVacationRequestSteps.MaternityLeaveBox();
     	newVacationRequestSteps.select_MaternityLeaveOptionConcediu();
     	newVacationRequestSteps.enter_DurationBox("Mar");
