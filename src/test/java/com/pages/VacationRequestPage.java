@@ -104,6 +104,7 @@ public class VacationRequestPage extends PageObject {
 	
 	public void EditOption(){
 		Edit.click();
+		waitABit(4000);
 	}
 	
 	
