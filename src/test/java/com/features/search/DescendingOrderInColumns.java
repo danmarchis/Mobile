@@ -37,7 +37,7 @@ public class DescendingOrderInColumns {
 	public void verifyIfStatusColumnIsInDescendingOrder() {
 		loginSteps.getHomePage();
 		loginSteps.loginAsPM();
-		loginSteps.access_track_tab();
+		loginSteps.accesVacationTrackerTab();
 
 		newDateSteps.selectStartDate_track(17, "Nov", 2015);
 		newDateSteps.selectEndDate_track(31, "Dec", 2015);

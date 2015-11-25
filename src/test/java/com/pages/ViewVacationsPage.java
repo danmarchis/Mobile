@@ -78,10 +78,10 @@ public class ViewVacationsPage extends PageObject {
 	
 	public void selectType(String type){
 		
-		if(type=="Holiday"){
+		if(type.contains("Holiday")){
 			holidayCheckBox.click();
 		}
-		if(type=="Vacation without payment"){
+		if(type.contains("Vacation Without Payment")){
 			vacationWithoutPaymentCheckBox.click();
 		}
 	}

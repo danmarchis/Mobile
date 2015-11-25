@@ -8,26 +8,14 @@ import com.pages.VacationRequestPage;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 
-public class DatePickerActionsSteps  extends ScenarioSteps {
+public class DatePickerSteps  extends ScenarioSteps {
 	VacationTrackerPage newDatePicker;
 	SiteMenuPage newSiteMenu;
 	DatePickerPag datePickerPage;
+	private int year;
 
 	
-	@Step
-	public void selectStartDate_track(int day, String month, int year) {
-		newDatePicker.click_startDate();
-		datePickerPage.setDate(day, month, year);
-	}
-
-
-	@Step
-	public void selectEndDate_track(int day, String month, int year) {
-		newDatePicker.click_endDate();
-		datePickerPage.setDate(day, month, year);
-	}
 	
-	@Step
 	public void selectStartDate_track(String date) {
 		
 		 	
@@ -50,4 +38,3 @@ public class DatePickerActionsSteps  extends ScenarioSteps {
 		datePickerPage.setDate(day, month, year);
 	}
 }
-

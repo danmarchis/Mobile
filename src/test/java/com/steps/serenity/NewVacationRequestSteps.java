@@ -111,4 +111,9 @@ public class NewVacationRequestSteps  extends ScenarioSteps {
     	newVacationRequestPage.WithDrawnOption();
     }
 
+    @Step
+    public void select_Edit(){
+    	newVacationRequestPage.EditOption();
+    }
+    
 }

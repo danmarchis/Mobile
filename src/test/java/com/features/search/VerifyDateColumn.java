@@ -1,10 +1,14 @@
 package com.features.search;
 
+import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Issue;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Pending;
 import net.thucydides.core.annotations.Steps;
+import net.thucydides.junit.annotations.UseTestDataFrom;
+
+import java.text.ParseException;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,10 +24,14 @@ import constantPckg.ConstantClass;
 import com.pages.LoginPage;
 import com.steps.serenity.DatePickerActionsSteps;
 import com.steps.serenity.LoginSteps;
+import com.steps.serenity.NewVacationRequestSteps;
+import com.steps.serenity.SignOutSteps;
 
+@RunWith(SerenityParameterizedRunner.class)
 
-@RunWith(SerenityRunner.class)
-public class AscendingOrderInColumns {
+@UseTestDataFrom(separator=';',value="tools/page.csv")
+public class VerifyDateColumn {
+
 	@Managed(uniqueSession = true)
 	public WebDriver webdriver;
 	
@@ -31,29 +39,33 @@ public class AscendingOrderInColumns {
 	public LoginSteps loginSteps;
 	
 	@Steps
-	public TrackerSteps newTrack;
-	
-	@Steps
 	public DatePickerActionsSteps newDateSteps;
 	
+	@Steps
+	public TrackerSteps newTrack;
+
 	@Steps
 	VacationTrackerSelectFiltersSteps selectFilters;
 	
 	@Steps
 	VerifyColumnTypesSteps verifyColumnTypes;
 	
+	@Steps
+	public SignOutSteps signout;
 	
-	
-	
+	public String department,type;
 	@Test
-	public void verifyIfStatusColumnIsInAscendingOrder() {
+	public void verifyIfTheApplicationDisplayCorrectStartDateInVacationTrackePage() throws ParseException {
+
 		loginSteps.getHomePage();
 		loginSteps.loginAsPM();
 		loginSteps.accesVacationTrackerTab();
+
+		
 		
 		
 		newDateSteps.selectStartDate_track(10, "Dec", 2015);	
-		newDateSteps.selectEndDate_track(31, "Dec", 2015);
+		newDateSteps.selectEndDate_track(21, "Dec", 2015);
 		
 		
 		selectFilters.showDropDownBuilding();
@@ -62,13 +74,14 @@ public class AscendingOrderInColumns {
     	
 		selectFilters.showDropDownDepartaments();
 		selectFilters.checkAllInDepartamentsDropDown();
-		selectFilters.chooseDepartaments(ConstantClass.MOBILE_DEPARTAMENT);
+		selectFilters.chooseDepartaments("Mobile");
     	
 		selectFilters.clickApply();
-		selectFilters.chooseNumeberOfRowsInPage(ConstantClass.FIVE);
-		verifyColumnTypes.verifyIfColumnIsInAscendingOrder(ConstantClass.STATUS_COLUMN);
+    	
+		
+		verifyColumnTypes.verifyIfApplicationDisplayCorrectStartDate("10/12/2015");
+		//signout.signOut();
 
 	}
-
-
+	
 }

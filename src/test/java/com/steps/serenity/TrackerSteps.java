@@ -129,22 +129,9 @@ public class TrackerSteps extends ScenarioSteps {
 		List<EmployeeVacationModel> result = grabVacationsList();	
 		tracker.verifyStautusColumn(result) ;
 		
-	//	nextPageTrack();
+	
 	}
-	/*
-	@Step
-	public void showIfElementsAreWellSorted(String type){
 	
-		List<EmployeeVacationModel> result = grabVacationsList();	
-		tracker.verifySortedColumn(result) ;
-		*/
-	//	nextPageTrack();
-	
-	/*
-	 * public void showIfDepartamentTypeIsCorrect(){
-	 * tracker.verifyIfDepartamentSelectedIsTrue(); }
-	 */
-
 	
 
 	public void verifyIfCanChooseAnEndDateThatIsEarlierThanTheStartDate() {
@@ -152,17 +139,7 @@ public class TrackerSteps extends ScenarioSteps {
 		//
 	}
 
-	public void selectNumberOfRowsInPage() {
-		// TODO Auto-generated method stub
-		tracker.clickOnDropDown();
-		
-	}
+	
 
-/*
-	public void verifyIfStatusColumnIsInAscendingOrder() {
-		tracker.clickOnStatusColumnHeader();
-		List<EmployeeVacationModel> result = grabVacationsList();
-		tracker.verifyStautusColumnIsInAscendingOrder(result) ;
-	}
-	*/
+
 }

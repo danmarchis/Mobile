@@ -15,9 +15,7 @@ import net.thucydides.core.annotations.Steps;
 import net.thucydides.junit.annotations.UseTestDataFrom;
 
 @RunWith(SerenityParameterizedRunner.class)
-@UseTestDataFrom(separator=';',value="tools/VacationType.csv")
-
-
+@UseTestDataFrom(separator=',',value="tools/VacationType.csv")
 public class ViewVacationsTest {
 	
 	@Managed(uniqueSession = true)
@@ -29,7 +27,7 @@ public class ViewVacationsTest {
 	@Steps
 	public LoginSteps loginSteps;
 
-	public String VacationType;
+	public String vacationType;
 	
 	@Test
 	public void approve_all_vacations_inbox() {
@@ -39,13 +37,13 @@ public class ViewVacationsTest {
 		viewFilteredVacations.clickViewVacation();
 		//viewFilteredVacations.tickHolidayType();
 		
-		viewFilteredVacations.selectVacationType(VacationType);
+		viewFilteredVacations.selectVacationType(vacationType);
 		viewFilteredVacations.tickPendingStatus();
 		viewFilteredVacations.checkOneToFive();
 		viewFilteredVacations.clickApplyButton();	
 		viewFilteredVacations.arrangeByStartDayHeaderFilter();
 		viewFilteredVacations.clickNextPage();
-		viewFilteredVacations.checkRegistrationContent(VacationType);
+		viewFilteredVacations.checkRegistrationContent(vacationType);
 		//viewFilteredVacations.selectVacationType(VacationType);
 		viewFilteredVacations.checkRegistrationStatus("Pending");
 	}

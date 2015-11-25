@@ -58,7 +58,7 @@ public class LoginSteps extends ScenarioSteps {
 	}
 	
 	@Step
-	public void access_track_tab(){
+	public void accesVacationTrackerTab(){
 		sitePage.accesTracker();
 	}
 	

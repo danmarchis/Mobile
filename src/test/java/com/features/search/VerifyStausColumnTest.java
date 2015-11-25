@@ -23,7 +23,7 @@ import com.steps.serenity.LoginSteps;
 import com.steps.serenity.NewVacationRequestSteps;
 
 @RunWith(SerenityRunner.class)
-public class VerifyStusColumnTest {
+public class VerifyStausColumnTest {
 
 
 	@Managed(uniqueSession = true)
@@ -47,16 +47,14 @@ public class VerifyStusColumnTest {
 	VerifyColumnTypesSteps  verifyColumnTypes;
 	
 	@Test
-	public void verify_If_NoStatus_Elements_Are_Allowed_In_Status_Column() {
+	public void verifyIfNoStatusElementsAreAllowedInStatusColumn() {
 
 		loginSteps.getHomePage();
 		loginSteps.loginAsPM();
-		loginSteps.access_track_tab();
-
+		loginSteps.accesVacationTrackerTab();
 		
-		
-		newDateSteps.selectStartDate_track(17, "Nov", 2015);	
-		newDateSteps.selectEndDate_track(31, "Dec", 2015);
+		newDateSteps.selectStartDate_track(ConstantClass.DATE_START);	
+		newDateSteps.selectEndDate_track(ConstantClass.DATE_FINAL);
 		
 		
 		selectFilters.showDropDownBuilding();
